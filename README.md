@@ -18,21 +18,34 @@
 
 ---
 
-## 🖼️ Capturas de pantalla
-
-![Home](multimedia/capturas_repositorio/home.jpg)
-![Carruseles y footer](multimedia/capturas_repositorio/carruseles_footer.jpg)
-![Registro y login](multimedia/capturas_repositorio/registro_login.jpg)
-![Perfil](multimedia/capturas_repositorio/Perfil.jpg)
-![Admin. Panel de administración](multimedia/capturas_repositorio/admin.jpg)
-![Ficha de juego](multimedia/capturas_repositorio/ficha_juego.jpg)
-![Cometarios de los usuarios](multimedia/capturas_repositorio/comentarios.jpg)
-
----
-
 ## 🚀 Tecnologías usadas
 
 - HTML5, CSS3 y JavaScript (vanilla)
 - PHP con arquitectura MVC
 - MySQL
 - XAMPP (Apache y MySQL)
+
+---
+
+## 🖼️ Capturas de pantalla
+
+- Home:
+![Home](multimedia/capturas_repositorio/home.jpg)
+
+- Caruseles y Footer:
+![Carruseles y footer](multimedia/capturas_repositorio/carruseles_footer.jpg)
+
+- Registro / Login:
+![Registro y login](multimedia/capturas_repositorio/registro_login.jpg)
+
+- Perfil de usuario:
+![Perfil](multimedia/capturas_repositorio/Perfil.jpg)
+
+- Admin y panel de administración:
+![Admin. Panel de administración](multimedia/capturas_repositorio/admin.jpg)
+
+- Ficha de juego:
+![Ficha de juego](multimedia/capturas_repositorio/ficha_juego.jpg)
+
+- Comentarios de usuarios:
+![Cometarios de los usuarios](multimedia/capturas_repositorio/comentarios.jpg)
