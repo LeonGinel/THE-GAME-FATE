@@ -20,8 +20,13 @@
 
 ## 🖼️ Capturas de pantalla
 
-*(Próximamente)*  
-<!-- Aquí puedes subir y mostrar imágenes más adelante usando: ![Descripción](ruta-imagen) -->
+![Home](multimedia/capturas_repositorio/home.jpg)
+![Carruseles y footer](multimedia/capturas_repositorio/carruseles_footer.jpg)
+![Registro y login](multimedia/capturas_repositorio/registro_login.jpg)
+![Perfil](multimedia/capturas_repositorio/perfil.jpg)
+![Admin. Panel de administración](multimedia/capturas_repositorio/admin.jpg)
+![Ficha de juego](multimedia/capturas_repositorio/ficha_juego.jpg)
+![Cometarios de los usuarios](multimedia/capturas_repositorio/comentarios.jpg)
 
 ---
 
