@@ -16,18 +16,6 @@ Futuras mejoras planeadas:
 
 ---
 
-## Funcionalidades principales
-
-- Buscador avanzado de juegos con filtros y búsqueda en tiempo real.  
-- Sistema de recomendaciones adaptado al comportamiento y preferencias del usuario.  
-- Perfiles de usuario con Top 3 editable y lista de juegos con valoraciones, críticas y etiquetas (“Obra maestra” / “Sobrevalorado”).  
-- Valoración mediante estrellas y espacio para críticas personales.  
-- Registro/Login con gestión de sesión.  
-- Panel de administración para gestión de usuarios, juegos y contenido.  
-- Integración con la API de RAWG para enriquecer la información de los juegos.
-
----
-
 ## Capturas del proyecto
 
 - **Home y navegación principal**  
@@ -68,6 +56,18 @@ Futuras mejoras planeadas:
 - Ofrecer una experiencia de usuario intuitiva y dinámica, con interacción en tiempo real.  
 - Integrar información externa de juegos mediante la API de RAWG.  
 - Demostrar habilidades en desarrollo web completo y buenas prácticas de programación.  
+
+---
+
+## Funcionalidades principales
+
+- Buscador avanzado de juegos con filtros y búsqueda en tiempo real.  
+- Sistema de recomendaciones adaptado al comportamiento y preferencias del usuario.  
+- Perfiles de usuario con Top 3 editable y lista de juegos con valoraciones, críticas y etiquetas (“Obra maestra” / “Sobrevalorado”).  
+- Valoración mediante estrellas y espacio para críticas personales.  
+- Registro/Login con gestión de sesión.  
+- Panel de administración para gestión de usuarios, juegos y contenido.  
+- Integración con la API de RAWG para enriquecer la información de los juegos.
 
 ---
 
