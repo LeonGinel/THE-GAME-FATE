@@ -13,45 +13,47 @@
     <link rel="stylesheet" href="../css/ficha_juego.css">
 </head>
 <body>
-    <?php require_once "header.php"; ?>
+    <div class="wrapper">
+        <?php require_once "header.php"; ?>
 
-    <main>
-        <div class="contenedor_principal">
-            <div class="informacion">
-                <div class="portada_valoracion">
-                    <img src="" alt="" class="imagen_portada">
-                    <img src="" alt="" class="imagen_valoracion">
+        <main>
+            <div class="contenedor_principal">
+                <div class="informacion">
+                    <div class="portada_valoracion">
+                        <img src="" alt="" class="imagen_portada">
+                        <img src="" alt="" class="imagen_valoracion">
+                    </div>
+
+                    <div class="datos_juego">
+                        <h2 class="titulo"></h2>
+                        <p class="desarrolladora"><strong>Desarrolladora: </strong><span></span></p>
+                        <p class="lanzamiento"><strong>Lanzamiento: </strong><span></span></p>
+                        <p class="genero"><strong>Género: </strong><span></span></p>
+                        <p class="plataforma"><strong>Plataforma: </strong><span></span></p>
+                        <p class="duracion"><strong>Duración: </strong><span></span></p>
+                    </div>
+
+                    <div class="premios">
+                        <img src="" alt="premio Goty" class="goty">
+                        <img src="" alt="Obra maestra" class="obra_maestra">
+                        <img src="" alt="Sobrevalorado" class="sobrevalorado">
+                    </div>
                 </div>
 
-                <div class="datos_juego">
-                    <h2 class="titulo"></h2>
-                    <p class="desarrolladora"><strong>Desarrolladora: </strong><span></span></p>
-                    <p class="lanzamiento"><strong>Lanzamiento: </strong><span></span></p>
-                    <p class="genero"><strong>Género: </strong><span></span></p>
-                    <p class="plataforma"><strong>Plataforma: </strong><span></span></p>
-                    <p class="duracion"><strong>Duración: </strong><span></span></p>
+                <div class="descripcion">
+                    <h2 class="titulo">Descripción: </h2>
+                    <p></p>
                 </div>
 
-                <div class="premios">
-                    <img src="" alt="premio Goty" class="goty">
-                    <img src="" alt="Obra maestra" class="obra_maestra">
-                    <img src="" alt="Sobrevalorado" class="sobrevalorado">
-                </div>
+                <section class="criticas">
+
+                </section>
             </div>
+        </main>
 
-            <div class="descripcion">
-                <h2 class="titulo">Descripción: </h2>
-                <p></p>
-            </div>
+        <?php require_once "footer.php"; ?>
 
-            <section class="criticas">
-
-            </section>
-        </div>
-    </main>
-
-    <?php require_once "footer.php"; ?>
-
-    <script src="../js/ficha_juego.js"></script>
+        <script src="../js/ficha_juego.js"></script>
+    </div>      
 </body>
 </html>

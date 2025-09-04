@@ -9,8 +9,6 @@
 
 /* CONTENIDO */
 main {
-    min-height: 100vh;
-
     display: grid;
     justify-items: center;
     align-items: center;
@@ -45,7 +43,7 @@ main {
     padding-left: 2rem;
 }
 .registro, .email, .usuario, .contraseña, .confirmar_contraseña, .crear_cuenta, .login, .condiciones {
-    width: 70%;
+    width: 90%;
     font-size: 1.8rem;
 
     display: flex;

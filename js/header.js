@@ -28,10 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let contenedor = document.querySelector(".contenedor_principal");
 
     window.addEventListener("scroll", function () {
+         // Obtener la altura real actual del header en px
+        let headerHeight = header.offsetHeight; 
+
         let contenedorTop = contenedor.getBoundingClientRect().top;
         
-        if (contenedorTop <= 90) { // 90px es la altura del header
-            header.style.backgroundColor = "rgba(34, 34, 34, 0.9)"; // Color sólido
+        if (contenedorTop <= headerHeight) { // 90px es la altura del header
+            header.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; // Color sólido
         } else {
             header.style.backgroundColor = "rgba(34, 34, 34, 0.4)"; // Color transparente
         }

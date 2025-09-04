@@ -1,298 +1,339 @@
 /* FONDO */
 main {
-    background-image: url('../multimedia/imagenes/fondo_index_2.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    padding-top: 15%;
-    padding-bottom: 5%;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 15%;
+  padding-bottom: 5%;
 
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../multimedia/imagenes/fondo_index_2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  filter: blur(0.1em);
+  z-index: -2;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 70%, rgb(0, 0, 0) 100%);
+  z-index: -1;
 }
 
 /* CONTENIDO */
 .contenedor_principal {
-    background: linear-gradient(to bottom, rgba(28, 40, 51, 0), rgba(0, 0, 0, 1));
-    color: white;
-    width: 50%;
-    margin: auto;
-    padding: 2rem;
-    border-radius: 2rem;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 5rem;
-
+  background: rgba(0, 0, 0, 0); /* fondo semitransparente */
+  backdrop-filter: blur(0.3rem); /* difumina lo que hay detrás */
+  /* background-color: rgb(0, 0, 0, 0.7);
+  background: linear-gradient(to bottom, rgba(28, 40, 51, 0), rgba(0, 0, 0, 1)); */
+  color: white;
+  width: 70%;
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
 }
 
 /* -------------------- FORMULARIO -------------------- */
 .formulario {
-    background-color: rgba(28, 40, 51, 0.9);
-    border:ridge;
-    border-radius: 2rem;
-    padding: 1.5rem 3rem;
-    width: 100%;
-    display: grid;
-    grid-template-rows: repeat(6, 1fr); /* Se crean 6 filas dentro del grid */
-    gap: 1.5rem; /* Espaciado entre elementos */
-    justify-items: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    font-size: 2rem;
+  background-color: rgba(91, 91, 91, 0.373);
+  /* border: ridge; */
+  border-radius: 2rem;
+  padding: 1.5rem 3rem;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr); /* Se crean 6 filas dentro del grid */
+  gap: 1.5rem; /* Espaciado entre elementos */
+  justify-items: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  font-size: 2rem;
 }
 
 /* FILA 1 DEL FORMULARIO (TÍTULO) */
-.fila1, .fila2, .fila3, .fila4, .fila5, .fila6 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+.fila1,
+.fila2,
+.fila3,
+.fila4,
+.fila5,
+.fila6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }
-.fila1, .fila2, .fila3, .fila4, .fila6 {
-    width: 100%;
+.fila1,
+.fila2,
+.fila3,
+.fila4,
+.fila6 {
+  width: 100%;
 }
 .fila2 {
-    gap: 2.5rem;
+  gap: 2.5rem;
 }
 
 /* FILA 2 DEL FORMULARIO */
 .buscador {
-    flex: 4;
-    width: 100%;
+  flex: 4;
+  width: 100%;
 }
 .multi {
-    flex: 1;
+  flex: 1;
 }
 
 /* FILA 3 DEL FORMULARIO */
-.genero, .plataforma {
-    flex: 2;
+.genero,
+.plataforma {
+  flex: 2;
 }
 .goty {
-    flex: 1;
+  flex: 1;
 }
 
 /* FILA 4 DEL FORMULARIO */
-.duracion, .lanzamiento {
-    flex: 2;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.duracion,
+.lanzamiento {
+  flex: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.selectores_duracion, .selectores_lanzamiento {
-    width: 100%;
-    display: flex;
-    align-items: center;  
-    gap: 0.5rem;
+.selectores_duracion,
+.selectores_lanzamiento {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .obra_maestra {
-    flex: 1;
+  flex: 1;
 }
 
 /* FILA 5 DEL FORMULARIO */
 .estrellas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-    flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
 }
 
 /* INPUTS */
-.barra_buscador, .generos, .plataformas, .minimo, .maximo {
-    width: 100%;
-    height: 3rem;
-    border-radius: 0.5rem;
-    padding-left: 1rem;
-    background-color: rgba(253, 254, 254, 0.8); 
+.barra_buscador,
+.generos,
+.plataformas,
+.minimo,
+.maximo {
+  width: 100%;
+  height: 3rem;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  background-color: rgba(253, 254, 254, 0.8);
 }
 
 /* BOTONES */
-.btn_buscar, .btn_multi, .btn_goty, .btn_obra_maestra {
-    height: 3rem;
-    cursor: pointer;
+.btn_buscar,
+.btn_multi,
+.btn_goty,
+.btn_obra_maestra {
+  height: 3rem;
+  cursor: pointer;
 }
-.btn_multi, .btn_goty, .btn_obra_maestra {
-    display: inline-block;
-    border-radius: 1.5rem;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
+.btn_multi,
+.btn_goty,
+.btn_obra_maestra {
+  display: inline-block;
+  border-radius: 1.5rem;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
 }
 .btn_multi {
-    background-image: url(../multimedia/imagenes/btn_multi_1.jpg);
+  background-image: url(../multimedia/imagenes/btn_multi_1.jpg);
 }
 .btn_goty {
-    background-image: url(../multimedia/imagenes/btn_goty_1.PNG);
+  background-image: url(../multimedia/imagenes/btn_goty_1.PNG);
 }
 .btn_obra_maestra {
-    background-image: url(../multimedia/imagenes/btn_obra_maestra.jpg);
+  background-image: url(../multimedia/imagenes/btn_obra_maestra.jpg);
 }
 .btn_buscar {
-    background-color: #C8C8C8;
-    border-radius: 0.5rem;
-    width: 25%;
-    font-size: 1.8rem;
-    font-weight: 400;
+  background-color: #c8c8c8;
+  border-radius: 0.5rem;
+  width: 25%;
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 /* EFECTOS */
-.estrella, input + label {
-    height: 2.3rem;
-    cursor: pointer; 
-    transition: transform 0.4s ease, filter 0.4s ease; /* Efecto suave */
+.estrella,
+input + label {
+  height: 2.3rem;
+  cursor: pointer;
+  transition: transform 0.4s ease, filter 0.4s ease; /* Efecto suave */
 }
 input + label {
-    filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 input[type="radio"]:hover ~ label img,
 input[type="radio"]:hover + label img,
 input[type="checkbox"]:hover + label {
-    transform: scale(1.2); /* Aumenta el tamaño */
-    filter: brightness(1.2); /* Hace la imagen más brillante */
+  transform: scale(1.2); /* Aumenta el tamaño */
+  filter: brightness(1.2); /* Hace la imagen más brillante */
 }
-input[type="radio"], input[type='checkbox'] {
-    display: none;
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
 }
 input[type="radio"]:checked ~ label img,
 input[type="radio"]:checked + label img,
 input[type="checkbox"]:checked + label {
-    transform: scale(1.2);
-    filter: brightness(1.4); 
+  transform: scale(1.2);
+  filter: brightness(1.4);
 }
-
 
 /* -------------------------------- RESULTADOS BUSQUEDA ---------------------------- */
-#seccion_resultados {
-    width: 85%;
-}
 #resultados {
-    background-color: rgba(28, 40, 51, 0.9);
-    display: grid;
-    gap: 2rem;
-    border-radius: 1rem;
-    width: 100%;
-    padding: 2.5rem;
-    font-size: 1.3rem;
+  background-color: rgba(91, 91, 91, 0.373);
+  display: grid;
+  gap: 2rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.3rem;
 }
 .resultado {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  height: 10.2rem;
+  border: 0.2rem solid rgb(255, 255, 255);
+  border-radius: 1.5rem;
 }
 .resultado a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
 }
 .portada {
-    position: relative;
-    width: 35%;
-    height: 100%;
-    border: solid black;
-    border-radius: 1.5rem;
-    overflow: hidden;
+  flex: 3;
+  position: relative;
+  aspect-ratio: 4 / 2;
+  border: 0.2rem solid black;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 .portada_imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .informacion {
-    display: grid;
-    gap: 1.3rem;
-    width: 50%;
-    height: 70%;
+  flex: 4;
+  display: grid;
+  gap: 1.3rem;
 }
-.etiqueta_goty {
-    width: 10%;
-    height: auto;
+.etiquetas {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  padding: 0.8rem;
+  width: 100%;
 }
+.etiqueta_goty,
 .etiqueta_obra_maestra {
-    width: 10%;
-    height: auto;
-    border-radius: 50%;
-}
-.portada img {
-    width: 100%; /* Para que la imagen ocupe el ancho del contenedor */
-    display: block;
-    border-radius: 1.5rem;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 2rem;
 }
 .etiqueta_estrellas {
-    position: absolute;
-    bottom: 0.5rem;  /* Pegado a la parte inferior */
-    left: 0.5rem;   /* Pegado a la derecha */
-    max-width: 10rem; /* Evita que se haga demasiado grande */
+  position: absolute;
+  bottom: 0.5rem; /* Pegado a la parte inferior */
+  left: 0.5rem; /* Pegado a la derecha */
+  max-width: 10rem; /* Evita que se haga demasiado grande */
 }
-
-
 
 /* -------------------------------- CARRUSEL ---------------------------- */
 .carrusel {
-    position: relative;
-    width: 94%; 
-    margin: auto;
-    display: grid;
-    gap: 1rem;
-    background-color: rgba(28, 40, 51, 0.9);
-    border-radius: 1rem;
-    padding: 2.5rem;
-    font-size: 1.3rem;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+  background-color: rgba(91, 91, 91, 0.373);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  font-size: 1.3rem;
 }
 .carrusel h2 {
-    padding-left: 2rem;
+  padding-left: 2rem;
 }
 .contenedor_carrusel {
-    width: 100%;
-    overflow: hidden;  /* Oculta las imágenes que están fuera del área visible */
+  width: 100%;
+  overflow: hidden; /* Oculta las imágenes que están fuera del área visible */
 }
 .lista_carrusel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;  /* Suaviza la animación de desplazamiento cuando las imágenes cambian */
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Suaviza la animación de desplazamiento cuando las imágenes cambian */
 }
 .lista_carrusel li a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
 .imagen_carrusel {
-    flex: 0 0 33.33%; /* Cada imagen ocupa 1/3 del carrusel */
-    overflow: hidden; /* Oculta partes sobrantes de la imagen */
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  flex: 0 0 33.33%; /* Cada imagen ocupa 1/3 del carrusel */
+  overflow: hidden; /* Oculta partes sobrantes de la imagen */
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 .imagen_carrusel img {
-    width: 100%;
-    height: 100%;
-    border: solid black;
-    border-radius: 1rem;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  border: solid black;
+  border-radius: 1rem;
+  object-fit: cover;
+  display: block;
 }
 .carrusel_btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.3);
-    border: none;
-    border-radius: 1rem;
-    padding: 2.5rem 1rem;
-    cursor: pointer;
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 1rem;
+  padding: 2.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
 }
 .carrusel_btn-izq {
-    left: -3.5rem;
+  left: -3.5rem;
 }
 .carrusel_btn-dcha {
-    right: -3.5rem;
+  right: -3.5rem;
 }
 .carrusel_btn:hover {
-    background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
