@@ -283,57 +283,71 @@ input[type="checkbox"]:checked + label {
   gap: 1rem;
   background-color: rgba(91, 91, 91, 0.373);
   border-radius: 1.5rem;
-  padding: 2.5rem;
+  padding: 1rem 2.7rem;
   font-size: 1.3rem;
-}
-.carrusel h2 {
-  padding-left: 2rem;
+  text-align: center;
 }
 .contenedor_carrusel {
   width: 100%;
-  overflow: hidden; /* Oculta las imágenes que están fuera del área visible */
+  overflow: hidden;
 }
 .lista_carrusel {
   display: flex;
   transition: transform 0.5s ease-in-out; /* Suaviza la animación de desplazamiento cuando las imágenes cambian */
 }
 .lista_carrusel li a {
+  position: relative;
+  display: block;
   color: white;
+  border-radius: 1rem;
   text-decoration: none;
   cursor: pointer;
+  overflow: hidden;
 }
 .imagen_carrusel {
   flex: 0 0 33.33%; /* Cada imagen ocupa 1/3 del carrusel */
-  overflow: hidden; /* Oculta partes sobrantes de la imagen */
   display: grid;
   justify-items: center;
   align-items: center;
 }
 .imagen_carrusel img {
+  aspect-ratio: 4 / 3;
   width: 100%;
   height: 100%;
   border: solid black;
   border-radius: 1rem;
   object-fit: cover;
-  display: block;
+}
+li p {
+  position: absolute;
+  bottom: 0.5rem;
+  background: rgba(0, 0, 0, 0.774);
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+  width: 100%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .carrusel_btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0);
   border: none;
-  border-radius: 1rem;
-  padding: 2.5rem 1rem;
+  padding: 9.1rem 0;
   cursor: pointer;
   z-index: 10;
 }
 .carrusel_btn-izq {
-  left: -3.5rem;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  left: 0.09rem;
 }
 .carrusel_btn-dcha {
-  right: -3.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  right: 0.1rem;
 }
 .carrusel_btn:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
