@@ -1,8 +1,8 @@
 /* FONDO */
 main {
   position: relative; /* Necesario para posicionar el ::before */
-  padding-top: 10%;
-  padding-bottom: 5%;
+  padding-top: 18rem;
+  padding-bottom: 5rem;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -30,24 +30,21 @@ main::after {
 
 /* CONTENIDO */
 .contenedor_principal {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  height: auto; /* Asegura que el contenedor principal pueda crecer */
   width: 90%;
   max-width: 100rem;
   color: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 2rem;
-
-  display: grid;
-  grid-template-columns: 1fr 2.5fr;
-  gap: 3rem;
-  height: auto; /* Asegura que el contenedor principal pueda crecer */
 }
 
 /* ------------  CONTENEDOR 1  -------------*/
 .contenedor_1 {
   padding: 2rem;
   display: grid;
-  gap: 5rem;
-
+  gap: 9rem;
   align-self: start; /* Asegura que el contenedor 1 no se estire y solo ocupe el espacio necesario */
 }
 
@@ -170,32 +167,28 @@ h1 {
 .formulario_modificar_juego,
 .formulario_introducir_juego,
 .formulario_eliminar_juego {
+  display: none;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
   background: linear-gradient(to bottom, rgba(116, 18, 126, 1), black);
   border: ridge;
   border-radius: 1rem;
   padding: 1rem;
   width: 100%;
   font-size: 2rem;
-
-  display: none;
-  justify-items: center;
-  align-items: center;
-  gap: 1rem;
 }
 
 /* ------------  CONTENEDOR 2  -------------*/
 .contenedor_2 {
-  border-left: 0.2rem solid;
-  padding: 2rem;
-
+  position: relative;
   display: grid;
   justify-items: center;
   align-items: center;
   grid-template-rows: auto auto 1fr;
-  gap: 3rem;
-
-  position: relative;
-
+  gap: 0.5rem;
+  border-left: 0.3rem solid;
+  padding: 1.5rem;
   /* El contenedor 2 puede crecer y expandirse hacia abajo */
   overflow: auto; /* Permite que contenedor_2 se desplace si el contenido es mayor que el contenedor */
   height: auto;

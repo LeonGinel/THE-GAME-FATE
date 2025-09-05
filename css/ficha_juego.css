@@ -46,6 +46,11 @@ main::after {
   align-items: center;
   gap: 3rem;
 }
+.juego_card {
+  background-color: rgba(42, 42, 42, 0.8);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
 .informacion {
   position: relative;
   display: flex;

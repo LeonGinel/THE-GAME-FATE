@@ -51,12 +51,12 @@ main::after {
 
 /* -------------------- FORMULARIO -------------------- */
 .fondo1-form {
-  background-color: rgb(62, 62, 62, 0.8);
+  background-color: rgb(62, 62, 62, 0.4);
   width: 100%;
   padding: 0.7rem;
 }
 .fondo2-form {
-  background-color: rgba(54, 54, 54, 0.8);
+  background-color: rgba(54, 54, 54, 0.6);
   padding: 1.2rem;
 }
 .fondo1-form,
@@ -64,7 +64,7 @@ main::after {
   border-radius: 2rem;
 }
 .formulario {
-  background-color: rgba(42, 42, 42, 0.8);
+  background-color: rgba(42, 42, 42, 0.6);
   border-radius: 2rem;
   padding: 1.5rem 3rem;
   width: 100%;
@@ -323,11 +323,11 @@ input[type="checkbox"]:checked + label {
 
 /* -------------------------------- CARRUSEL ---------------------------- */
 .fondo1-carrusel {
-  background-color: rgb(62, 62, 62, 0.8);
+  background-color: rgb(62, 62, 62, 0.4);
   padding: 0.7rem;
 }
 .fondo2-carrusel {
-  background-color: rgba(54, 54, 54, 0.8);
+  background-color: rgba(54, 54, 54, 0.6);
   padding: 1.2rem;
 }
 .fondo1-carrusel,
@@ -340,7 +340,7 @@ input[type="checkbox"]:checked + label {
   margin: auto;
   display: grid;
   gap: 1rem;
-  background-color: rgba(42, 42, 42, 0.8);
+  background-color: rgba(42, 42, 42, 0.6);
   border-radius: 1.5rem;
   padding: 1rem 2.7rem;
   font-size: 1.3rem;
