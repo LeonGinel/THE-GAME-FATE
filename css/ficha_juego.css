@@ -1,140 +1,173 @@
 /* FONDO */
 main {
-    background-image: url('../multimedia/imagenes/fondo_index_2.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 15%;
-    padding-bottom: 5%;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 18rem;
+  padding-bottom: 5rem;
 
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../multimedia/imagenes/fondo1.webp");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  filter: blur(0.6em);
+  z-index: -2;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.5) 50%, rgb(0, 0, 0) 100%);
+  z-index: -1;
 }
 
 /* CONTENIDO */
 .contenedor_principal {
-    color: white;
-    width: 60%;
-    border-radius: 2rem;
-    padding: 2.5rem;
-    font-size: 1.4rem;
+  color: white;
+  width: 90%;
+  max-width: 100rem;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  font-size: 1.4rem;
 
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 3rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
 }
 .informacion {
-    position: relative;
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
 .portada_valoracion {
-    width: 100%;
-    display: grid;
+  flex: 4;
+  width: 100%;
+  display: grid;
 }
 .imagen_portada {
-    border: solid black;
-    border-radius: 1.5rem;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 5 / 3;
+  border: 0.2rem solid black;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 .imagen_valoracion {
-    position: absolute;
-    bottom: 0.5rem;  /* Pegado a la parte inferior */
-    left: 0.5rem;   /* Pegado a la derecha */
-    width: 20%; /* Evita que se haga demasiado grande */
+  position: absolute;
+  bottom: 0.5rem; /* Pegado a la parte inferior */
+  left: 0.5rem; /* Pegado a la derecha */
+  width: 20%; /* Evita que se haga demasiado grande */
 }
 .datos_juego {
-    display: grid;
-    gap: 1rem;
-    width: 100%;
+  flex: 4;
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  font-size: 1.8rem;
 }
 .datos_juego h2 {
-    font-size: 3rem;
-    padding-bottom: 2rem;
+  font-size: 3.5rem;
+  padding-bottom: 1rem;
 }
 .datos_juego span {
-    padding-left: 1rem;
+  padding-left: 1rem;
 }
 .premios {
-    display: grid;
-    align-items: center;
-    gap: 1.5rem;
+  flex: 1;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 1.5rem;
 }
 .premios img {
-    width: 100%;
-    border-radius: 3rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
 }
 .descripcion {
-    padding: 1rem 3rem;
-    text-align: left;
-    display: grid;
-    gap: 1.5rem;
+  padding: 1rem;
+  text-align: justify;
+  display: grid;
+  gap: 1.5rem;
+}
+.descripcion h2 {
+  font-size: 2em;
+}
+.descripcion p {
+  font-size: 1.1em;
 }
 
 /* LISTA DE CRITICAS */
 .criticas {
-    width: 90%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 1.5rem;
+  width: 90%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 .critica {
-    background-color: rgba(28, 40, 51, 0.5);
-    color: white;
-    padding: 1rem;
-    border-radius: 2rem;
+  background-color: rgba(28, 40, 51, 0.5);
+  color: white;
+  padding: 1rem;
+  border-radius: 2rem;
 
-    display: grid;
-    grid-template-columns: 0.5fr 10fr;
-    gap: 1.5rem;
-    height: auto;  /* Asegura que el contenedor principal pueda crecer */
+  display: grid;
+  grid-template-columns: 0.5fr 10fr;
+  gap: 1.5rem;
+  height: auto; /* Asegura que el contenedor principal pueda crecer */
 }
 .informacion_usuario {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5;
 
-    align-self: start;  /* Asegura que el contenedor 1 no se estire y solo ocupe el espacio necesario */
+  align-self: start; /* Asegura que el contenedor 1 no se estire y solo ocupe el espacio necesario */
 }
 .imagen_usuario {
-    width: 90%;
-    border-radius: 50%;
-    overflow: hidden;
+  width: 90%;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .imagen_usuario img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .nombre_usuario {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
 .critica_texto {
-    border-left: 0.2rem solid;
-    width: 100%;
-    padding: 0.5rem;
-    padding-left: 2rem;
+  border-left: 0.2rem solid;
+  width: 100%;
+  padding: 0.5rem;
+  padding-left: 2rem;
 }
 
 /* MENSAJE SI NO ESTAS REGISTRADO */
-.registrate, .inicia_sesion {
-    text-decoration: none;
-    color: #a569bd ;
-    font-size: 2rem;
-    font-weight: 900;
-    cursor: pointer;
+.registrate,
+.inicia_sesion {
+  text-decoration: none;
+  color: #a569bd;
+  font-size: 2rem;
+  font-weight: 900;
+  cursor: pointer;
 }
