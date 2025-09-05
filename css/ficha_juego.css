@@ -109,27 +109,38 @@ main::after {
   font-size: 2em;
 }
 .descripcion p {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 /* LISTA DE CRITICAS */
-.criticas {
+.contenedor_criticas {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  gap: 1.5rem;
   width: 90%;
+}
+.contenedor_criticas label {
+  font-size: 2.3rem;
+  padding-left: 2rem;
+}
+.criticas {
+  width: 100%;
   display: grid;
   justify-items: center;
   align-items: center;
   gap: 1.5rem;
+  font-size: 1.1em;
 }
 .critica {
-  background-color: rgba(28, 40, 51, 0.5);
-  color: white;
-  padding: 1rem;
-  border-radius: 2rem;
-
   display: grid;
   grid-template-columns: 0.5fr 10fr;
   gap: 1.5rem;
+  background-color: rgba(42, 42, 42, 0.8);
   height: auto; /* Asegura que el contenedor principal pueda crecer */
+  color: white;
+  padding: 1rem;
+  border-radius: 2rem;
 }
 .informacion_usuario {
   display: grid;
@@ -163,11 +174,16 @@ main::after {
 }
 
 /* MENSAJE SI NO ESTAS REGISTRADO */
+.contenedor_criticas p {
+  font-size: 2rem;
+}
 .registrate,
 .inicia_sesion {
   text-decoration: none;
-  color: #a569bd;
-  font-size: 2rem;
+  color: #00f6d1;
+  font-size: 2.6rem;
   font-weight: 900;
   cursor: pointer;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
 }

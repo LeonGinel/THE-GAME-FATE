@@ -18,36 +18,39 @@
 
         <main>
             <div class="contenedor_principal">
-                <div class="informacion">
-                    <div class="portada_valoracion">
-                        <img src="" alt="" class="imagen_portada">
-                        <img src="" alt="" class="imagen_valoracion">
+                <div class="juego_card">
+                    <div class="informacion">
+                        <div class="portada_valoracion">
+                            <img src="" alt="" class="imagen_portada">
+                            <img src="" alt="" class="imagen_valoracion">
+                        </div>
+
+                        <div class="datos_juego">
+                            <h2 class="titulo"></h2>
+                            <p class="desarrolladora"><strong>Desarrolladora: </strong><span></span></p>
+                            <p class="lanzamiento"><strong>Lanzamiento: </strong><span></span></p>
+                            <p class="genero"><strong>Género: </strong><span></span></p>
+                            <p class="plataforma"><strong>Plataforma: </strong><span></span></p>
+                            <p class="duracion"><strong>Duración: </strong><span></span></p>
+                        </div>
+
+                        <div class="premios">
+                            <img src="" alt="premio Goty" class="goty">
+                            <img src="" alt="Obra maestra" class="obra_maestra">
+                            <img src="" alt="Sobrevalorado" class="sobrevalorado">
+                        </div>
                     </div>
 
-                    <div class="datos_juego">
-                        <h2 class="titulo"></h2>
-                        <p class="desarrolladora"><strong>Desarrolladora: </strong><span></span></p>
-                        <p class="lanzamiento"><strong>Lanzamiento: </strong><span></span></p>
-                        <p class="genero"><strong>Género: </strong><span></span></p>
-                        <p class="plataforma"><strong>Plataforma: </strong><span></span></p>
-                        <p class="duracion"><strong>Duración: </strong><span></span></p>
-                    </div>
-
-                    <div class="premios">
-                        <img src="" alt="premio Goty" class="goty">
-                        <img src="" alt="Obra maestra" class="obra_maestra">
-                        <img src="" alt="Sobrevalorado" class="sobrevalorado">
+                    <div class="descripcion">
+                        <h2 class="titulo">Descripción: </h2>
+                        <p></p>
                     </div>
                 </div>
 
-                <div class="descripcion">
-                    <h2 class="titulo">Descripción: </h2>
-                    <p></p>
+                <div class="contenedor_criticas">
+                    <label>Críticas:</label>
+                    <section class="criticas"></section>
                 </div>
-
-                <section class="criticas">
-
-                </section>
             </div>
         </main>
 

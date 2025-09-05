@@ -1,94 +1,117 @@
 /* FONDO */
 .fondo {
-    position: fixed;  /* Fijar en la pantalla */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Ajusta sin deformar */
-    z-index: -1;  /* Enviar al fondo */
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+}
+.fondo video {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.fondo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.5) 40%, rgb(0, 0, 0) 100%);
+  z-index: 1; /* se queda sobre el video pero debajo del contenido */
+  pointer-events: none; /* no bloquea clics */
 }
 
 /* CONTENIDO */
 main {
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding-top: 12rem;
 }
 .contenedor_principal {
-    background-color: rgba(68, 68, 68, 0.5); /* Color de fondo */
-    color: white;
-    width: 40%;
-    padding: 2rem;
-    border-radius: 2rem;
+  background-color: rgba(68, 68, 68, 0.5); /* Color de fondo */
+  color: white;
+  width: 50%;
+  max-width: 60rem;
+  padding: 2rem;
+  border-radius: 2rem;
 }
 
 /* FORMULARIO */
 .formulario {
-    border: 0.1rem solid;
-    border-radius: 2rem;
-    padding: 2rem;
-    width: auto;
+  border: 0.1rem solid;
+  border-radius: 2rem;
+  padding: 2rem;
+  width: auto;
 
-    display: grid;
-    justify-items: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    grid-template-columns: 1fr; /* 1 columna */
-    grid-template-rows: repeat(auto, 1fr); /* 5 filas */
-    gap: 1.5rem; /* Espaciado entre elementos */
+  display: grid;
+  justify-items: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  grid-template-columns: 1fr; /* 1 columna */
+  grid-template-rows: repeat(auto, 1fr); /* 5 filas */
+  gap: 1.5rem; /* Espaciado entre elementos */
 }
 .formulario > div > input {
-    background-color: rgba(68, 68, 68, 0.5); /* Color de fondo */
-    border-radius: 2rem;
-    width: 100%;
-    height: 4rem;
-    padding-left: 2rem;
+  background-color: rgba(68, 68, 68, 0.5); /* Color de fondo */
+  border-radius: 2rem;
+  width: 100%;
+  height: 4rem;
+  padding-left: 2rem;
 }
-.registro, .email, .usuario, .contraseña, .confirmar_contraseña, .crear_cuenta, .login, .condiciones {
-    width: 90%;
-    font-size: 1.8rem;
+.registro,
+.email,
+.usuario,
+.contraseña,
+.confirmar_contraseña,
+.crear_cuenta,
+.login,
+.condiciones {
+  width: 90%;
+  font-size: 1.8rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 .registro {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 .condiciones {
-    width: 100%;
-    font-size: 1.5rem;
-    gap: 1.5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  gap: 1.5rem;
 }
 .btn_crear_cuenta {
-    background-color: #C8C8C8;
-    border-radius: 1rem;
-    height: 3rem;
-    width: 50%;
-    font-size: 1.8rem;
-    font-weight: 550;
-    cursor: pointer;
+  background-color: #c8c8c8;
+  border-radius: 1rem;
+  height: 3rem;
+  width: 50%;
+  font-size: 1.8rem;
+  font-weight: 550;
+  cursor: pointer;
 }
 .login {
-    font-size: 2rem;
-    gap: 2.5rem;
+  font-size: 2rem;
+  gap: 2.5rem;
 }
 .btn_registro_login {
-    color: #a569bd ;
-    font-size: 1.8rem;
-    font-weight: 900;
-    border: none; /* Elimina el borde */
-    outline: none; /* Elimina el contorno al hacer clic */
-    background: none; /* Si quieres quitar el fondo */
-    cursor: pointer;
+  color: #00f6d1;
+  font-size: 1.8rem;
+  font-weight: 900;
+  border: none; /* Elimina el borde */
+  outline: none; /* Elimina el contorno al hacer clic */
+  background: none; /* Si quieres quitar el fondo */
+  cursor: pointer;
 }
 .formulario input::placeholder,
 .formulario > div > input {
-    color: white;
-    font-size: 1.6rem;
+  color: white;
+  font-size: 1.6rem;
 }
 
 /* ERRORES */
 .error {
-    color: red;
-    display: none;
+  color: red;
+  display: none;
 }

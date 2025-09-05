@@ -17,7 +17,11 @@
     <div class="wrapper">
         <?php require_once "header.php"; ?>
 
-        <video autoplay loop muted playsinline class="fondo" src="../multimedia/videos/fondo_login.webm"></video>
+        <div class="fondo">
+            <video autoplay loop muted playsinline>
+                <source src="../multimedia/videos/fondo_login.webm" type="video/webm">
+            </video>
+        </div>
 
         <main>
             <div class="contenedor_principal">
