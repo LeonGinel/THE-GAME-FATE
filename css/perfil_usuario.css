@@ -1,369 +1,408 @@
 /* FONDO */
-.fondo {
-    position: fixed;  /* Fijar en la pantalla */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Ajusta sin deformar */
-    z-index: -1;  /* Enviar al fondo */
+main {
+  position: relative; /* Necesario para posicionar el ::before */
+  padding-top: 10%;
+  padding-bottom: 5%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden; /* Evita que el blur sobresalga */
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-image: url("../multimedia/imagenes/fondo_perfil.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(0.1em); /* El blur que quieres */
+  z-index: -1; /* Detrás del contenido */
+}
+main::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 70%, rgb(0, 0, 0) 90%);
+  z-index: -1;
 }
 
 /* CONTENIDO */
-main {
-    background-image: url('../multimedia/imagenes/fondo_perfil.webp');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 10%;
-    padding-bottom: 5%;
-
-    display: grid;
-    justify-items: center;
-    align-items: center;
-}
-
 .contenedor_principal {
-    color: white;
-    width: 60%;
-    padding: 2rem;
-    border-radius: 2rem;
+  width: 90%;
+  max-width: 100rem;
+  color: white;
+  padding: 2rem;
+  border-radius: 2rem;
 
-    display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    gap: 3rem;
-    height: auto;  /* Asegura que el contenedor principal pueda crecer */
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 3rem;
+  height: auto; /* Asegura que el contenedor principal pueda crecer */
 }
 
 /* ------------  CONTENEDOR 1  -------------*/
 .contenedor_1 {
-    padding: 2rem;
-    display: grid;
-    gap: 5rem;
+  padding: 2rem;
+  display: grid;
+  gap: 5rem;
 
-    align-self: start;  /* Asegura que el contenedor 1 no se estire y solo ocupe el espacio necesario */
+  align-self: start; /* Asegura que el contenedor 1 no se estire y solo ocupe el espacio necesario */
 }
 
 /* IMAGEN Y USUARIO */
 .informacion_usuario {
-    display: grid;
-    justify-items: center;
-    gap: 1rem;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
 }
 .imagen_perfil {
-    width: 50%;  /* Ajusta según el tamaño deseado */
-    height: auto; /* Debe ser igual al width para que sea un círculo */
-    border-radius: 50%;
-    object-fit: cover; /* Para que la imagen no se deforme */
+  width: 50%; /* Ajusta según el tamaño deseado */
+  height: auto; /* Debe ser igual al width para que sea un círculo */
+  border-radius: 50%;
+  object-fit: cover; /* Para que la imagen no se deforme */
 }
 h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 /* TOP 3 */
 .top_3 {
-    display: grid;
-    justify-items: center; /* Organiza los elementos de arriba a abajo */
-    align-items: center;
-    gap: 2rem; /* Espacio entre los elementos */
+  display: grid;
+  justify-items: center; /* Organiza los elementos de arriba a abajo */
+  align-items: center;
+  gap: 2rem; /* Espacio entre los elementos */
 }
-.juego_1, .juego_2, .juego_3 {
-    position: relative;  
+.juego_1,
+.juego_2,
+.juego_3 {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 60%;
 }
-.juego_1 {
-    width: 80%;
+/* .juego_1 img {
+  border-radius: 3rem;
 }
+.juego_2 img {
+  border-radius: 3rem;
+}
+.juego_3 img {
+  border-radius: 2rem;
+} */
 .juego_2 {
-    width: 60%;
+  width: 45%;
 }
 .juego_3 {
-    width: 40%;
+  width: 35%;
 }
 .top_3 img {
-    width: 100%;  /* Ajusta según el tamaño deseado */
-    border-radius: 50%;
-    object-fit: cover; /* Para que la imagen no se deforme */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .btn_top {
-    position: absolute;
-    width: 25%;
-    height: 25%;
-    right: 1%;
-    border-radius: 50%;
-    cursor: pointer;
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  right: 1%;
+  top: 1%;
+  border-radius: 50%;
+  cursor: pointer;
 }
-.buscador_top_1, .buscador_top_2, .buscador_top_3 {
-    position: relative;
-    display: none;
+.buscador_top_1,
+.buscador_top_2,
+.buscador_top_3 {
+  position: relative;
+  display: none;
 }
 .resultados_top {
-    position: absolute;
-    top: 100%; /* Lo posicionamos justo debajo del campo de búsqueda */
-    left: 0;
-    right: 0; /* Esto asegura que el ancho de los resultados no se desborde */
+  position: absolute;
+  top: 100%; /* Lo posicionamos justo debajo del campo de búsqueda */
+  left: 0;
+  right: 0; /* Esto asegura que el ancho de los resultados no se desborde */
 
-    background-color: rgba(244, 246, 247, 0.5);
-    color: black;
-    width: 100%;
-    border-radius: 1.5rem;
-    z-index: 100;
+  background-color: rgba(244, 246, 247, 0.5);
+  color: black;
+  width: 100%;
+  border-radius: 1.5rem;
+  z-index: 100;
 
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 1rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
 }
 .opcion_juego {
-    cursor: pointer;
-    width: 90%;
-    font-size: 1.5rem;
-    overflow: hidden;
-    white-space: nowrap;  /* Evita que el texto se pase a la siguiente línea */
-    overflow: hidden;     /* Oculta el texto que sobresale */
-    text-overflow: ellipsis; /* Agrega puntos suspensivos "..." al final si el texto se corta */
+  cursor: pointer;
+  width: 90%;
+  font-size: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap; /* Evita que el texto se pase a la siguiente línea */
+  overflow: hidden; /* Oculta el texto que sobresale */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos "..." al final si el texto se corta */
 }
 
 /* GESTIÓN ADMINISTRADOR */
 .contenedor_gestionar_juegos {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 1rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
 }
 .contenedor_botones_gestionar_juegos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
-.btn_banear_usuario, .btn_modificar_juego, .btn_introducir_juego, .btn_borrar_juego {
-    background-color: #C8C8C8;
-    border-radius: 0.7rem;
-    padding: 0.2rem;
-    cursor: pointer;
+.btn_banear_usuario,
+.btn_modificar_juego,
+.btn_introducir_juego,
+.btn_borrar_juego {
+  background-color: #c8c8c8;
+  border-radius: 0.7rem;
+  padding: 0.2rem;
+  cursor: pointer;
 }
-.formulario_banear_usuario, .formulario_modificar_juego, .formulario_introducir_juego, .formulario_eliminar_juego {
-    background: linear-gradient(to bottom, rgba(116, 18, 126, 1), black);
-    border:ridge;
-    border-radius: 1rem;
-    padding: 1rem;
-    width: 100%;
-    font-size: 2rem;
+.formulario_banear_usuario,
+.formulario_modificar_juego,
+.formulario_introducir_juego,
+.formulario_eliminar_juego {
+  background: linear-gradient(to bottom, rgba(116, 18, 126, 1), black);
+  border: ridge;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+  font-size: 2rem;
 
-    display: none;
-    justify-items: center;
-    align-items: center;
-    gap: 1rem;
+  display: none;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
 }
-
 
 /* ------------  CONTENEDOR 2  -------------*/
 .contenedor_2 {
-    border-left: 0.2rem solid;
-    padding: 2rem;
+  border-left: 0.2rem solid;
+  padding: 2rem;
 
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-rows: auto auto 1fr;
-    gap: 3rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: auto auto 1fr;
+  gap: 3rem;
 
-    position: relative;
+  position: relative;
 
-    /* El contenedor 2 puede crecer y expandirse hacia abajo */
-    overflow: auto; /* Permite que contenedor_2 se desplace si el contenido es mayor que el contenedor */
-    height: auto;
+  /* El contenedor 2 puede crecer y expandirse hacia abajo */
+  overflow: auto; /* Permite que contenedor_2 se desplace si el contenido es mayor que el contenedor */
+  height: auto;
 }
 
 .btn_agregar_juego {
-    background-color: #C8C8C8;
-    border-radius: 0.5rem;
-    width: 35%;
-    height: 3rem;
-    font-size: 1.8rem;
-    font-weight: 400;
-    cursor: pointer;
+  background-color: #c8c8c8;
+  border-radius: 0.5rem;
+  width: 35%;
+  height: 3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 /* FORMULARIO NUEVO JUEGO */
 .formulario_agregar_juego {
-    background: linear-gradient(to bottom, rgba(116, 18, 126, 1), black);
-    border:ridge;
-    border-radius: 1rem;
-    padding: 2.5rem 3rem;
-    width: 30%;
-    font-size: 2rem;
+  background: linear-gradient(to bottom, rgba(116, 18, 126, 1), black);
+  border: ridge;
+  border-radius: 1rem;
+  padding: 2.5rem 3rem;
+  width: 30%;
+  font-size: 2rem;
 
-    display: none;
-    justify-items: center;
-    align-items: center;
-    gap: 2rem;
-    position: fixed;  /* Fija la posición en la pantalla */
-    top: 36%;  /* Ajusta la distancia desde la parte superior de la pantalla */
-    left: 50%;  /* Centra el formulario horizontalmente */
-    transform: translateX(-20%);  /* Asegura que el formulario esté perfectamente centrado */
-    z-index: 100;
+  display: none;
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  position: fixed; /* Fija la posición en la pantalla */
+  top: 36%; /* Ajusta la distancia desde la parte superior de la pantalla */
+  left: 50%; /* Centra el formulario horizontalmente */
+  transform: translateX(-20%); /* Asegura que el formulario esté perfectamente centrado */
+  z-index: 100;
 }
 .buscar_juego {
-    width: 100%;
+  width: 100%;
 }
-.valoracion, .critica, .etiquetas, .guardar {
-    width: 100%;
+.valoracion,
+.critica,
+.etiquetas,
+.guardar {
+  width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 .etiquetas {
-    width: 80%;
+  width: 80%;
 }
-.buscador, .barra_busqueda_top {
-    background-color: rgba(253, 254, 254, 0.8); 
-    width: 100%;
-    height: 3rem;
-    border-radius: 1.5rem;
-    padding-left: 1rem;
+.buscador,
+.barra_busqueda_top {
+  background-color: rgba(253, 254, 254, 0.8);
+  width: 100%;
+  height: 3rem;
+  border-radius: 1.5rem;
+  padding-left: 1rem;
 }
 .estrellas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
 }
 .critica_texto {
-    background-color: rgba(253, 254, 254, 0.8);
-    width: 90%;
-    border-radius: 1rem;
-    padding: 0.8rem;
+  background-color: rgba(253, 254, 254, 0.8);
+  width: 90%;
+  border-radius: 1rem;
+  padding: 0.8rem;
 }
-.obra_maestra, .sobrevalorado {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.obra_maestra,
+.sobrevalorado {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btn_obra_maestra, .btn_sobrevalorado {
-    display: inline-block;
-    border-radius: 1rem;
-    width: 50%;
-    height: 5rem;
-    background-position: center;
-    background-size: cover;
+.btn_obra_maestra,
+.btn_sobrevalorado {
+  display: inline-block;
+  border-radius: 1rem;
+  width: 50%;
+  height: 5rem;
+  background-position: center;
+  background-size: cover;
 }
 .btn_obra_maestra {
-    background-image: url(../multimedia/logos/obra_maestra.jpg);
+  background-image: url(../multimedia/logos/obra_maestra.jpg);
 }
 .btn_sobrevalorado {
-    background-image: url(../multimedia/logos/sobrevalorado.jpg);
+  background-image: url(../multimedia/logos/sobrevalorado.jpg);
 }
 .btn_guardar {
-    background-color: #C8C8C8;
-    border-radius: 0.5rem;
-    width: 30%;
-    font-size: 1.8rem;
-    font-weight: 400;
-    cursor: pointer;
+  background-color: #c8c8c8;
+  border-radius: 0.5rem;
+  width: 30%;
+  font-size: 1.8rem;
+  font-weight: 400;
+  cursor: pointer;
 }
-input[type="radio"], input[type="checkbox"]{
-    display: none;
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
 }
 
 /* LISTA JUEGOS GUARDADOS  */
 .lista_juegos_agregados {
-    display: grid;
-    gap: 1.5rem;
-    border-radius: 1rem;
-    width: 100%;
-    padding: 2.5rem;
-    font-size: 1rem;
+  display: grid;
+  gap: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1rem;
 }
 [class^="juego_item_"] {
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.contenedor_review {
+  background-color: rgba(42, 42, 42, 0.7);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 1.5rem;
 }
 .contenedor {
-    background-color: rgba(28, 40, 51, 0.5);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
 }
 .informacion {
-    width: 55%;
-    display: grid;
-    gap: 0.2rem;
+  display: grid;
+  width: 55%;
+  gap: 0.2rem;
 }
 .informacion a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 2rem;
 }
 .portada {
-    width: 30%;
-    height: 5rem;
-    border: solid black;
-    border-radius: 1.5rem;
-    overflow: hidden;
+  width: 40%;
+  height: 8rem;
+  border: solid black;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 .portada_imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .etiqueta_estrellas {
-    width: 50%; 
+  width: 70%;
 }
 .etiqueta {
-    width: 10%;
+  width: 15%;
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .imagen_etiqueta {
-    width: 100%;
-    border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .btn_eliminar_review {
-    background-color: #C8C8C8;
-    border-radius: 0.7rem;
-    padding: 0.2rem;
-    cursor: pointer;
+  background-color: #c8c8c8;
+  border-radius: 0.7rem;
+  padding: 0.2rem;
+  cursor: pointer;
 }
 .contenedor_critica {
-    background-color: rgba(28, 40, 51, 0.5);
-    justify-items: center;
-    gap: 1rem;
-    width: 80%;
-    padding: 0.8rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 2rem 1rem;
+  font-size: 1.6rem;
 }
-.texto_ctitica {
-    font-size: 1.5rem;
-}
-
 
 /* -------------------------- EFECTOS -------------------------- */
 
 /* EFECTOS */
 
 input + label {
-    height: 2.3rem;
-    cursor: pointer; 
-    filter: brightness(0.9);
-    transition: transform 0.4s ease, filter 0.4s ease; /* Efecto suave */
+  height: 2.3rem;
+  cursor: pointer;
+  filter: brightness(0.9);
+  transition: transform 0.4s ease, filter 0.4s ease; /* Efecto suave */
 }
 input[type="radio"]:hover ~ label,
 input[type="radio"]:hover + label,
 input[type="checkbox"]:hover + label {
-    transform: scale(1.2); /* Aumenta el tamaño */
-    filter: brightness(1.2); /* Hace la imagen más brillante */
+  transform: scale(1.2); /* Aumenta el tamaño */
+  filter: brightness(1.2); /* Hace la imagen más brillante */
 }
 
 input[type="radio"]:checked ~ label,
 input[type="radio"]:checked + label,
 input[type="checkbox"]:checked + label {
-    transform: scale(1.2);
-    filter: brightness(1.4); 
+  transform: scale(1.2);
+  filter: brightness(1.4);
 }
-
