@@ -35,56 +35,93 @@ document.addEventListener("DOMContentLoaded", function () {
     xhr.onload = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         let juegos = JSON.parse(xhr.responseText);
-        let seccion_resultados = document.getElementById("seccion_resultados");
-        seccion_resultados.innerHTML = '<div id="resultados"></div>';
-        let resultados = document.getElementById("resultados");
-        resultados.innerHTML = "";
 
-        if (juegos.length === 0) {
-          resultados.innerHTML = "<p>No se encontraron juegos.</p>";
-        } else {
-          juegos.forEach((juego) => {
-            let estrellas = "../multimedia/iconos/";
+        // Mostrar la sección
+        let seccion_contenedor = document.querySelector(".fondo1-resultados");
+        seccion_contenedor.style.display = "block";
 
-            if (juego.valoracion_media >= 0 && juego.valoracion_media < 2) {
-              estrellas += "1_estrellas.png";
-            } else if (juego.valoracion_media >= 2 && juego.valoracion_media < 3) {
-              estrellas += "2_estrellas.png";
-            } else if (juego.valoracion_media >= 3 && juego.valoracion_media < 4) {
-              estrellas += "3_estrellas.png";
-            } else if (juego.valoracion_media >= 4 && juego.valoracion_media < 5) {
-              estrellas += "4_estrellas.png";
-            } else if (juego.valoracion_media == 5) {
-              estrellas += "5_estrellas.png";
-            }
+        // Función para paginar los resultados
+        function mostrarPagina(numeroPagina) {
+          let seccion_resultados = document.getElementById("seccion_resultados");
+          seccion_resultados.innerHTML = '<div id="resultados"></div>';
+          let resultados = document.getElementById("resultados");
+          resultados.innerHTML = "";
 
-            let goty = juego.goty == "1" ? '<img class="etiqueta_goty" src="../multimedia/logos/goty.webp" alt="GOTY">' : "";
-            let obra_maestra =
-              juego.obra_maestra == "1"
-                ? '<img class="etiqueta_obra_maestra" src="../multimedia/logos/obra_maestra.jpg" alt="Obra Maestra">'
-                : "";
+          // Tamaño de página (10 juegos por página)
+          let juegosPorPagina = 10;
 
-            let juego_HTML = `
-                            <div class="resultado">
-                                <div class="portada">
-                                    <a href="ficha_juego.php?id_juego=${juego.id_juego}">
-                                        <img class="portada_imagen" src="${juego.portada}" alt="Portada de ${juego.titulo}">
-                                        <img class="etiqueta_estrellas" src="${estrellas}" alt="Valoración de ${juego.valoracion_media}">
-                                    </a>
-                                </div>
-                                <div class="informacion">
-                                    <h3><a href="ficha_juego.php?id_juego=${juego.id_juego}">${juego.titulo}</a></h3>
-                                    <p>Desarrolladora: ${juego.desarrolladora}</p>
-                                    <p>Lanzamiento: ${juego.lanzamiento}</p>
-                                </div>
-                                <div class="etiquetas">
-                                    ${goty}
-                                    ${obra_maestra}
-                                <div/>
-                            </div>`;
-            resultados.innerHTML += juego_HTML;
-          });
+          // Alamcenamos todos los juegos en otra variable para manipularla sin alterar el array original
+          let juegosTotales = juegos;
+
+          // Calculamos el total de páginas redondeando hacia arriba
+          let totalPaginas = Math.ceil(juegosTotales.length / juegosPorPagina);
+
+          // Índices de inicio y fin
+          let inicio = (numeroPagina - 1) * juegosPorPagina;
+          let fin = inicio + juegosPorPagina;
+
+          // Cortar el array
+          let juegosPagina = juegosTotales.slice(inicio, fin);
+
+          if (juegosTotales.length === 0) {
+            resultados.innerHTML = "<p>No se encontraron juegos.</p>";
+          } else {
+            juegosPagina.forEach((juego) => {
+              let estrellas = "../multimedia/iconos/";
+
+              if (juego.valoracion_media >= 0 && juego.valoracion_media < 2) {
+                estrellas += "1_estrellas.png";
+              } else if (juego.valoracion_media >= 2 && juego.valoracion_media < 3) {
+                estrellas += "2_estrellas.png";
+              } else if (juego.valoracion_media >= 3 && juego.valoracion_media < 4) {
+                estrellas += "3_estrellas.png";
+              } else if (juego.valoracion_media >= 4 && juego.valoracion_media < 5) {
+                estrellas += "4_estrellas.png";
+              } else if (juego.valoracion_media == 5) {
+                estrellas += "5_estrellas.png";
+              }
+
+              let goty = juego.goty == "1" ? '<img class="etiqueta_goty" src="../multimedia/logos/goty.webp" alt="GOTY">' : "";
+              let obra_maestra =
+                juego.obra_maestra == "1"
+                  ? '<img class="etiqueta_obra_maestra" src="../multimedia/logos/obra_maestra.jpg" alt="Obra Maestra">'
+                  : "";
+
+              let juego_HTML = `
+                              <div class="resultado">
+                                  <div class="portada">
+                                      <a href="ficha_juego.php?id_juego=${juego.id_juego}">
+                                          <img class="portada_imagen" src="${juego.portada}" alt="Portada de ${juego.titulo}">
+                                          <img class="etiqueta_estrellas" src="${estrellas}" alt="Valoración de ${juego.valoracion_media}">
+                                      </a>
+                                  </div>
+                                  <div class="informacion">
+                                      <h3><a href="ficha_juego.php?id_juego=${juego.id_juego}">${juego.titulo}</a></h3>
+                                      <p>Desarrolladora: ${juego.desarrolladora}</p>
+                                      <p>Lanzamiento: ${juego.lanzamiento}</p>
+                                  </div>
+                                  <div class="etiquetas">
+                                      ${goty}
+                                      ${obra_maestra}
+                                  <div/>
+                              </div>`;
+              resultados.innerHTML += juego_HTML;
+            });
+          }
+
+          // Botones para pasar de página
+          let paginacion = document.getElementById("paginacion");
+          paginacion.innerHTML = "";
+          for (let i = 1; i <= totalPaginas; i++) {
+            let btn = document.createElement("button");
+            btn.textContent = i;
+            btn.classList.add("btn-pagina");
+            btn.addEventListener("click", () => mostrarPagina(i));
+            paginacion.appendChild(btn);
+          }
         }
+
+        mostrarPagina(1);
       } else {
         console.log(`Error en la solicitud AJAX: ${xhr.status}`);
       }

@@ -1,176 +1,228 @@
-/* DISPOSICIÓN */
+/* ------------------------------- DISPOSICIÓN ------------------------------- */
 .head {
-    position: fixed;
-    width: 100%;
-    height: 8%; /* Altura de la barra de navegación */
-    background-color: rgba(34, 34, 34, 0.4); /* Color de fondo */
-    color: white; /* Color del texto */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    z-index: 1000; /* Para que siempre esté encima */
-
-    transition: background-color 0.3s ease-in-out; /* cambio transparencia header con contenedor principal */
-}
-.head1, .head2, .head3, .head4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1000; /* Para que siempre esté encima */
 }
 .head1 {
-    flex: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  height: 6rem;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  transition: background-color 0.3s ease-in-out; /* cambio transparencia header con contenedor principal */
 }
-.head2, .head4 {
-    flex: 35%;
+.head2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22rem;
+  height: 3.5rem;
+  background-color: rgba(42, 42, 42);
+  padding: 0.3rem;
+}
+.head2_bienvenido,
+.head2-btns,
+.head2_btns-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head2_bienvenido {
+  gap: 22rem;
+  padding-right: 2.6rem;
+}
+.head2-btns {
+  gap: 1rem;
+}
+.head2_btns-login {
+  padding-right: 3rem;
+  gap: 20rem;
 }
 .head3 {
-    flex: 25%;
+  height: 2rem;
+  background-color: rgba(54, 54, 54);
 }
-
-/* MENÚ HAMBURGUESA */
+.head4 {
+  height: 1rem;
+  background-color: rgb(62, 62, 62);
+}
+/* ------------------------------- MENÚ HAMBURGUESA ------------------------------- */
 .head_nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(34, 34, 34, 0);
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(34, 34, 34, 0);
+  color: white;
 }
 .head_menu-hamburguesa {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
-.head_btn-menu {   /* Botón del menú hamburguesa */
-    font-size: 8rem;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
+.head_btn-menu {
+  /* Botón del menú hamburguesa */
+  font-size: 8rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
-.head_menu {   /* Lista del menú (oculta por defecto) */ 
-    background-color: rgba(34, 34, 34, 0.8);
-    width: 12%;
-    list-style: none;
-    display: none;  /* Se oculta inicialmente */
-    flex-direction: column;
-    position: absolute;
-    top: 9rem;
-    left: 0;
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-size: 1.5rem;
-    gap: 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+.head_menu {
+  /* Lista del menú (oculta por defecto) */
+  background-color: rgba(34, 34, 34, 0.8);
+  width: 12%;
+  list-style: none;
+  display: none; /* Se oculta inicialmente */
+  flex-direction: column;
+  position: absolute;
+  top: 9rem;
+  left: 0;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  font-size: 1.5rem;
+  gap: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
 }
-.head_menu.open {   /* Mostrar menú cuando tenga la clase .open */
-    display: flex;
+.head_menu.open {
+  /* Mostrar menú cuando tenga la clase .open */
+  display: flex;
 }
 .head_menu li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
+  color: white;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 }
-.head_menu li a:hover {   /* Efecto al pasar el mouse */
-    color: #a569bd;
+.head_menu li a:hover {
+  /* Efecto al pasar el mouse */
+  color: #a569bd;
 }
 
-/* LOGO Y NOMBRE */
+/* ------------------------------- LOGO Y NOMBRE ------------------------------- */
+.head_btn-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  top: 3rem;
+  bottom: 0;
+  background-color: rgb(34, 34, 34);
+}
+
 .head_logo-principal {
-    height: 10rem; /* Ajusta el tamaño del logo */
+  width: 80%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .head h1 {
-    font-size: 3rem;
+  font-size: 3.5rem;
 }
 
-/* BUSCADOR */
+/* ------------------------------- BUSCADOR ------------------------------- */
 .head_contenedor-buscador {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    width: 25rem;
-    height: 3rem;
-    overflow: hidden; /* Para que no se salga nada */
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  width: 30rem;
+  height: 3rem;
+  overflow: hidden; /* Para que no se salga nada */
 }
 .head_buscador-formulario {
-    position: relative;
-    display: grid;
+  position: relative;
+  display: grid;
 }
 .head_barra-buscador {
-    flex: 100%;
-    border: none;
-    font-size: 1.3rem;
-    padding: 0.8rem 1rem; /* Espaciado interno */
-    outline: none;  /* quita el borde negro que sale al escribir */
+  flex: 100%;
+  border: none;
+  font-size: 1.3rem;
+  padding: 0.8rem 1rem; /* Espaciado interno */
+  outline: none; /* quita el borde negro que sale al escribir */
 }
 .resultados_busqueda_tiempo_real {
-    position: absolute;
-    top: 100%; /* Lo posicionamos justo debajo del campo de búsqueda */
-    left: 0;
-    right: 0; /* Esto asegura que el ancho de los resultados no se desborde */
+  position: absolute;
+  top: 100%; /* Lo posicionamos justo debajo del campo de búsqueda */
+  left: 0;
+  right: 0; /* Esto asegura que el ancho de los resultados no se desborde */
 
-    background-color: rgba(244, 246, 247, 0.5);
-    color: black;
-    width: 100%;
-    border-radius: 1.5rem;
-    z-index: 100;
+  background-color: rgba(244, 246, 247, 0.5);
+  color: black;
+  width: 100%;
+  border-radius: 1.5rem;
+  z-index: 100;
 
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 1rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
 }
 .opcion_juego {
-    cursor: pointer;
-    width: 90%;
-    font-size: 1.5rem;
-    overflow: hidden;
-    white-space: nowrap;  /* Evita que el texto se pase a la siguiente línea */
-    overflow: hidden;     /* Oculta el texto que sobresale */
-    text-overflow: ellipsis; /* Agrega puntos suspensivos "..." al final si el texto se corta */
+  cursor: pointer;
+  width: 90%;
+  font-size: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap; /* Evita que el texto se pase a la siguiente línea */
+  overflow: hidden; /* Oculta el texto que sobresale */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos "..." al final si el texto se corta */
 }
 .head_btn-lupa {
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .head_btn-lupa:hover img {
-    opacity: 1;
+  opacity: 1;
 }
 .head_icono-lupa {
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0.7;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.7;
 }
 
-/* BOTONES */
-.head_btn-login, .head_usuario {
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
+/* ------------------------------- BOTONES ------------------------------- */
+.head_btn-login,
+.head_usuario {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
-.head_btn-registro, .head_btn-inicio, .head_btn-perfil, .head_btn-logout {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #C8C8C8;
-    color: black;
-    text-decoration: none;
-    border-radius: 1rem;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+.head_btn-perfil {
+  display: inline-block;
+  background-color: #c8c8c8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
 }
-.head_btn-registro:visited, .head_btn-inicio:visited {
-    color: black;
+.head_btn-registro,
+.head_btn-logout {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: #c8c8c8;
+  color: black;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.head_btn-registro:visited {
+  color: black;
 }
