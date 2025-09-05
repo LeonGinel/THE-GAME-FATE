@@ -270,6 +270,7 @@ if ($_SESSION["rol"] === "invitado") {
 
         <?php require_once "footer.php"; ?>
 
+        <script src="../js/inactividad.js"></script>
         <script src="../js/perfil_usuario.js"></script>
     </div>
 </body>

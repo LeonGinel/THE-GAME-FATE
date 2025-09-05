@@ -53,6 +53,7 @@
 
         <?php require_once "footer.php"; ?>
 
+        <script src="../js/inactividad.js"></script>
         <script src="../js/ficha_juego.js"></script>
     </div>      
 </body>

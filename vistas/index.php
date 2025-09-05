@@ -150,6 +150,7 @@
 
             <?php require_once "footer.php"; ?>
 
+            <script src="../js/inactividad.js"></script>
             <script src="../js/index.js"></script>
             <script src="../js/index_carrusel.js"></script>
             <script src="../js/index_formulario.js"></script>
