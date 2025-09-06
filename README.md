@@ -19,25 +19,25 @@ Futuras mejoras planeadas:
 ## Capturas del proyecto
 
 - **Home y navegación principal**  
-![Home](multimedia/capturas_repositorio/home.jpg)
+![Home](multimedia/capturas_repositorio/home.webp)
 
 - **Caruseles y footer**  
-![Caruseles y footer](multimedia/capturas_repositorio/carruseles_footer.jpg)
+![Caruseles y footer](multimedia/capturas_repositorio/carruseles-footer.webp)
 
 - **Registro y login**  
-![Registro y login](multimedia/capturas_repositorio/registro_login.jpg)
+![Registro y login](multimedia/capturas_repositorio/registro-login.webp)
 
 - **Perfil de usuario**  
-![Perfil](multimedia/capturas_repositorio/Perfil.jpg)
+![Perfil](multimedia/capturas_repositorio/Perfil-usuario.webp)
 
 - **Panel de administración**  
-![Admin](multimedia/capturas_repositorio/admin.jpg)
+![Admin](multimedia/capturas_repositorio/administrador.webp)
 
 - **Ficha de juego**  
-![Ficha de juego](multimedia/capturas_repositorio/ficha_juego.jpg)
+![Ficha de juego](multimedia/capturas_repositorio/ficha-juego.webp)
 
 - **Comentarios y valoraciones de usuarios**  
-![Comentarios](multimedia/capturas_repositorio/comentarios.jpg)
+![Comentarios](multimedia/capturas_repositorio/criticas.webp)
 
 ---
 
