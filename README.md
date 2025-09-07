@@ -28,7 +28,7 @@ Futuras mejoras planeadas:
 ![Registro y login](multimedia/capturas_repositorio/registro-login.webp)
 
 - **Perfil de usuario**  
-![Perfil](multimedia/capturas_repositorio/Perfil-usuario.webp)
+![Perfil](multimedia/capturas_repositorio/perfil-usuario.webp)
 
 - **Panel de administración**  
 ![Admin](multimedia/capturas_repositorio/administrador.webp)
