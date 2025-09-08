@@ -29,36 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (informacion_usuario) {
               // Actualizar imagen de perfil
               let imagen_perfil = document.querySelector(".imagen_perfil");
-              let input_avatar = document.getElementById("input_avatar");
-
-              imagen_perfil.addEventListener("click", () => input_avatar.click());
-
-              input_avatar.addEventListener("change", () => {
-                let avatar = input_avatar.files[0];
-                if (!avatar) return;
-
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                  // Previsualización inmediata
-                  imagen_perfil.src = e.target.result;
-
-                  // Subida al servidor con POST clásico
-                  const xhr = new XMLHttpRequest();
-                  xhr.open("POST", "../app/modelo/perfil_usuario_modelo.php", true);
-
-                  let datos = `accion=subir_avatar&avatar=${encodeURIComponent(e.target.result)}`;
-
-                  xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                      alert(xhr.responseText); // Igual que en banear usuario
-                    }
-                  };
-
-                  xhr.send(datos);
-                };
-
-                reader.readAsDataURL(avatar); // Convierte la imagen a base64
-              });
 
               imagen_perfil.src = informacion_usuario.imagen_perfil;
               imagen_perfil.alt = `Avatar de ${informacion_usuario.usuario}`;
@@ -108,12 +78,16 @@ document.addEventListener("DOMContentLoaded", function () {
               btns_gestion.style.display = "none";
             }
 
-            // Llamar a la función para manejar los botones del TOP 3
+            // LLamar a al función para cambiar la imagen de avatar
+            cambiar_avatar();
+            // Llamar a la función para manejar los botones del TOP
             seleccionar_top_3();
+            // LLamar a las funciones de administrador
             banear_usuario();
             modificar_juego();
             añadir_juego();
             eliminar_juego();
+            // LLamar a la función de agregar review
             agregar_juego();
           }
         };
@@ -129,6 +103,36 @@ document.addEventListener("DOMContentLoaded", function () {
 // ------------------------------------------------------------------------------------------------ //
 // ---------------------------- FUNCIONAMIENTO DE LOS SELECTORES TOP 3 ---------------------------- //
 // ------------------------------------------------------------------------------------------------ //
+
+function cambiar_avatar() {
+  let imagen_perfil = document.querySelector(".imagen_perfil");
+  let input_avatar = document.getElementById("input_avatar");
+
+  imagen_perfil.addEventListener("click", () => input_avatar.click());
+
+  input_avatar.addEventListener("change", () => {
+    let avatar = input_avatar.files[0];
+    if (!avatar) return;
+
+    // Previsualización inmediata
+    imagen_perfil.src = URL.createObjectURL(avatar);
+
+    // Subida al servidor
+    const datos = new FormData();
+    datos.append("avatar", avatar);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "../app/modelo/perfil_usuario_modelo.php", true);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const respuesta = JSON.parse(xhr.responseText);
+      }
+    };
+
+    xhr.send(datos);
+  });
+}
 
 // Función para seleccionar juegos para cada posición del TOP 3
 function seleccionar_top_3() {

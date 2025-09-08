@@ -87,17 +87,19 @@ function obtener_informacion_usuario ($conexion) {
 }
 
 function cambia_avatar ($conexion) {
-    $id_usuario = $_SESSION['id_usuario'];
+    $id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : '';
     $avatar = isset($_FILES['avatar']) ? $_FILES['avatar'] : '';
 
-    // Extraer la extensión real del archivo (jpg, png, etc.)
-    $ext = pathinfo($archivo['name'], PATHINFO_EXTENSION);
+    // Extraer extensión real
+    $extension = pathinfo($avatar['name'], PATHINFO_EXTENSION);
 
-    // Guardar con el nombre "avatar_IDusuario.extensión_real"
-    $ruta_destino = "../multimedia/avatars/avatar_" . $id_usuario . "." . $ext;
+    // Carpeta destino
+    $ruta_destino = "../multimedia/avatares/avatar_" . $id_usuario . "." . $extension;
 
-    move_uploaded_file($archivo['tmp_name'], $ruta_destino);
+    // Mover el archivo a la carpeta
+    move_uploaded_file($avatar['tmp_name'], $ruta_destino);
 
+    // Guardar ruta en la base de datos
     $sql = "UPDATE usuarios SET imagen_perfil='$ruta_destino' WHERE id_usuario=$id_usuario";
     $conexion->query($sql);
 
