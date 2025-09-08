@@ -30,6 +30,7 @@ if ($_SESSION["rol"] === "invitado") {
                     <div class="informacion_usuario">
                         <div class="contenedor_imagen-perfil">
                             <img class="imagen_perfil" src="../multimedia/imagenes/default_avatar.png" alt="Imagen de perfil">
+                            <input type="file" id="input_avatar" accept="image/*" style="display:none;">
                         </div>
                         
                         <h2 class="nombre_usuario">Usuario</h2>

@@ -20,6 +20,11 @@ if (isset($_GET['id_usuario'])) {
     exit;
 }
 
+// Si esta cambiado el avatar
+if (isset($_POST['avatar'])) {
+    cambia_avatar($conexion);
+}
+
 // Si se está haciendo una búsqueda
 if (isset($_GET['consulta'])) {
     consultas_buscadores($conexion);
@@ -79,6 +84,25 @@ function obtener_informacion_usuario ($conexion) {
         // Devolver los resultados como un JSON
         return $informacion_usuario;
     }
+}
+
+function cambia_avatar ($conexion) {
+    $id_usuario = $_SESSION['id_usuario'];
+    $avatar = isset($_FILES['avatar']) ? $_FILES['avatar'] : '';
+
+    // Extraer la extensión real del archivo (jpg, png, etc.)
+    $ext = pathinfo($archivo['name'], PATHINFO_EXTENSION);
+
+    // Guardar con el nombre "avatar_IDusuario.extensión_real"
+    $ruta_destino = "../multimedia/avatars/avatar_" . $id_usuario . "." . $ext;
+
+    move_uploaded_file($archivo['tmp_name'], $ruta_destino);
+
+    $sql = "UPDATE usuarios SET imagen_perfil='$ruta_destino' WHERE id_usuario=$id_usuario";
+    $conexion->query($sql);
+
+    echo json_encode(['estado' => 'exito']);
+    exit;
 }
 
 

@@ -39,13 +39,12 @@
             <div class="head_contenedor-buscador">
                 <input type="text" name="buscador" placeholder="Buscar" class="head_barra-buscador">
                 <button type="submit" class="head_btn-lupa">
-                    <img class="head_icono_lupa" src="../multimedia/iconos/lupa.png" alt="Buscar">
+                    <img class="head_icono-lupa" src="../multimedia/iconos/lupa.png" alt="Buscar">
                 </button>
             </div>
             
             <div class="resultados_busqueda_tiempo_real"></div>
         </form>
-
     </div>
     
     <div class="head2">

@@ -29,6 +29,37 @@ document.addEventListener("DOMContentLoaded", function () {
             if (informacion_usuario) {
               // Actualizar imagen de perfil
               let imagen_perfil = document.querySelector(".imagen_perfil");
+              let input_avatar = document.getElementById("input_avatar");
+
+              imagen_perfil.addEventListener("click", () => input_avatar.click());
+
+              input_avatar.addEventListener("change", () => {
+                let avatar = input_avatar.files[0];
+                if (!avatar) return;
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                  // Previsualización inmediata
+                  imagen_perfil.src = e.target.result;
+
+                  // Subida al servidor con POST clásico
+                  const xhr = new XMLHttpRequest();
+                  xhr.open("POST", "../app/modelo/perfil_usuario_modelo.php", true);
+
+                  let datos = `accion=subir_avatar&avatar=${encodeURIComponent(e.target.result)}`;
+
+                  xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                      alert(xhr.responseText); // Igual que en banear usuario
+                    }
+                  };
+
+                  xhr.send(datos);
+                };
+
+                reader.readAsDataURL(avatar); // Convierte la imagen a base64
+              });
+
               imagen_perfil.src = informacion_usuario.imagen_perfil;
               imagen_perfil.alt = `Avatar de ${informacion_usuario.usuario}`;
 
@@ -245,7 +276,6 @@ function banear_usuario() {
     if (confirm(`¿Estás seguro de que deseas banear a ${usuario_baneado}`)) {
       var xhr = new XMLHttpRequest();
       xhr.open("POST", `../app/modelo/perfil_usuario_modelo.php`, true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
       let datos = `banear=${encodeURIComponent(usuario_baneado)}`;
 
