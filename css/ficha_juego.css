@@ -83,10 +83,10 @@ main::after {
   display: grid;
   gap: 0.5rem;
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .datos_juego h2 {
-  font-size: 3.5rem;
+  font-size: 5rem;
   padding-bottom: 1rem;
 }
 .datos_juego span {
@@ -111,10 +111,10 @@ main::after {
   gap: 1.5rem;
 }
 .descripcion h2 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 .descripcion p {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 /* LISTA DE CRITICAS */
@@ -126,7 +126,7 @@ main::after {
   width: 90%;
 }
 .contenedor_criticas label {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   padding-left: 2rem;
 }
 .criticas {

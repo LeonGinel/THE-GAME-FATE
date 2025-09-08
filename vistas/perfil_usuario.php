@@ -28,14 +28,21 @@ if ($_SESSION["rol"] === "invitado") {
             <div class="contenedor_principal">
                 <div class="contenedor_1">
                     <div class="informacion_usuario">
-                        <img class="imagen_perfil" src="../multimedia/imagenes/default_avatar.png" alt="Imagen de perfil">
-                        <h1 class="nombre_usuario">Usuario</h1>
+                        <div class="contenedor_imagen-perfil">
+                            <img class="imagen_perfil" src="../multimedia/imagenes/default_avatar.png" alt="Imagen de perfil">
+                        </div>
+                        
+                        <h2 class="nombre_usuario">Usuario</h2>
                     </div>
                     
                     <!-- Top 3 Juegos -->
-                    <div class="top_3">
+                    <section class="top_3">
+                        <h2>Top 3</h2>
                         <div class="juego_1">
-                            <img src="../multimedia/imagenes/top1.png">
+                            <div class="juego_1-corona">
+                                <img src="../multimedia/imagenes/top1.png">
+                            </div>
+                            
                             <button class="btn_top" value="1">+</button>
                         </div>
                         <div class="buscador_top_1">
@@ -44,7 +51,10 @@ if ($_SESSION["rol"] === "invitado") {
                         </div>
 
                         <div class="juego_2">
-                            <img src="../multimedia/imagenes/top2.png">
+                            <div class="juego_2-corona">
+                                <img src="../multimedia/imagenes/top2.png">
+                            </div>
+                
                             <button class="btn_top" value="2">+</button>
                         </div>
                         <div class="buscador_top_2">
@@ -53,14 +63,17 @@ if ($_SESSION["rol"] === "invitado") {
                         </div>
 
                         <div class="juego_3">
-                            <img src="../multimedia/imagenes/top3.png">
+                            <div class="juego_3-corona">
+                                <img src="../multimedia/imagenes/top3.png">
+                            </div>
+                            
                             <button class="btn_top" value="3">+</button>
                         </div>
                         <div class="buscador_top_3">
                             <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
                             <div class="resultados_top"></div>
                         </div>
-                    </div>
+                    </section>
 
                     <!--FORMULARIOS AÑADIR / MODIFICAR / ELIMINAR JUEGOS y USUARIOS DE LA BBDD (ADMIN) -->
                     <div class="contenedor_gestionar_juegos">

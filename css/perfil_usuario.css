@@ -17,7 +17,7 @@ main::before {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: blur(0.1em); /* El blur que quieres */
+  filter: blur(0.3em); /* El blur que quieres */
   z-index: -1; /* Detrás del contenido */
 }
 main::after {
@@ -44,54 +44,93 @@ main::after {
 .contenedor_1 {
   padding: 2rem;
   display: grid;
+  align-items: center;
+  justify-items: center;
   gap: 9rem;
   align-self: start; /* Asegura que el contenedor 1 no se estire y solo ocupe el espacio necesario */
 }
 
 /* IMAGEN Y USUARIO */
 .informacion_usuario {
+  background-color: rgba(42, 42, 42, 0.7);
   display: grid;
+  align-items: center;
   justify-items: center;
   gap: 1rem;
+  width: 90%;
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+.corona_imagen-perfil {
+  background-color: rgb(34, 34, 34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0.6em 0.6em black;
 }
 .imagen_perfil {
-  width: 50%; /* Ajusta según el tamaño deseado */
-  height: auto; /* Debe ser igual al width para que sea un círculo */
-  border-radius: 50%;
-  object-fit: cover; /* Para que la imagen no se deforme */
+  width: 100%;
+  border-radius: 3rem;
+  object-fit: cover;
 }
-h1 {
-  font-size: 4rem;
+.informacion_usuario h2 {
+  font-size: 5rem;
 }
 
 /* TOP 3 */
 .top_3 {
+  background-color: rgba(42, 42, 42, 0.7);
   display: grid;
-  justify-items: center; /* Organiza los elementos de arriba a abajo */
+  justify-items: center;
   align-items: center;
-  gap: 2rem; /* Espacio entre los elementos */
+  gap: 3rem;
+  width: 90%;
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+.top_3 h2 {
+  font-size: 4rem;
 }
 .juego_1,
 .juego_2,
 .juego_3 {
   position: relative;
-  aspect-ratio: 1 / 1;
-  width: 60%;
 }
-/* .juego_1 img {
-  border-radius: 3rem;
+.juego_1-corona,
+.juego_2-corona,
+.juego_3-corona {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
 }
-.juego_2 img {
-  border-radius: 3rem;
+
+/* ORO */
+.juego_1-corona {
+  width: 16rem;
+  height: 16rem;
+  border: 12px solid rgb(212, 175, 55);
 }
-.juego_3 img {
-  border-radius: 2rem;
-} */
-.juego_2 {
-  width: 45%;
+
+/* PLATA */
+.juego_2-corona {
+  width: 13rem;
+  height: 13rem;
+  border: 12px solid rgb(192, 192, 192);
 }
-.juego_3 {
-  width: 35%;
+
+/* BRONCE */
+.juego_3-corona {
+  width: 10rem;
+  height: 10rem;
+  border: 12px solid rgb(140, 105, 60);
 }
 .top_3 img {
   width: 100%;
@@ -143,10 +182,12 @@ h1 {
 
 /* GESTIÓN ADMINISTRADOR */
 .contenedor_gestionar_juegos {
+  background-color: rgba(42, 42, 42, 0.7);
   display: grid;
   justify-items: center;
   align-items: center;
-  gap: 1rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
 }
 .contenedor_botones_gestionar_juegos {
   display: flex;
@@ -334,7 +375,7 @@ input[type="checkbox"] {
   color: white;
   text-decoration: none;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .portada {
   width: 40%;

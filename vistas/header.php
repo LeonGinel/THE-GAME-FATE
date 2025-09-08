@@ -1,3 +1,16 @@
+<!-- Importar las fuentes usadas en la web -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
 
 <header class="head">
     <!-- <div class="head1">
@@ -18,7 +31,7 @@
         </nav>
     </div> -->
     <div class="head1">
-        <h1>THE GAME GATE</h1>
+        <h1>THE GAME FATE</h1>
 
         <a class="head_btn-logo" href="home.php"><img class="head_logo-principal" src="../multimedia/logos/logo_principal.webp" alt="Logo"></a>
 

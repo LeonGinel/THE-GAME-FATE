@@ -1,9 +1,16 @@
+:root {
+  --fuente-h1: "Press Start 2P";
+  --fuente-texto: "VT323";
+  --fuente-varios: "Orbitron";
+}
+
 /* GENERALES */
 * {
   margin: 0;
   padding: 0;
 }
 html {
+  font-family: var(--fuente-texto);
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -23,4 +30,16 @@ body {
 }
 main {
   flex: 1;
+}
+h1 {
+  font-family: var(--fuente-h1);
+}
+button,
+input,
+select {
+  font-family: var(--fuente-varios);
+}
+input,
+select {
+  color: rgb(116, 116, 116);
 }

@@ -52,6 +52,7 @@
 .head4 {
   height: 1rem;
   background-color: rgb(62, 62, 62);
+  box-shadow: 0 0.6em 0.6em black;
 }
 /* ------------------------------- MENÚ HAMBURGUESA ------------------------------- */
 .head_nav {
@@ -103,11 +104,12 @@
 }
 .head_menu li a:hover {
   /* Efecto al pasar el mouse */
-  color: #a569bd;
+  color: #00f6d1;
 }
 
 /* ------------------------------- LOGO Y NOMBRE ------------------------------- */
 .head_btn-logo {
+  background-color: rgb(34, 34, 34);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,7 +120,7 @@
   position: relative;
   top: 3rem;
   bottom: 0;
-  background-color: rgb(34, 34, 34);
+  box-shadow: 0 0.6em 0.6em black;
 }
 
 .head_logo-principal {
@@ -127,7 +129,7 @@
   object-fit: cover;
 }
 .head h1 {
-  font-size: 3.5rem;
+  font-size: 2.3rem;
 }
 
 /* ------------------------------- BUSCADOR ------------------------------- */
@@ -148,7 +150,7 @@
 .head_barra-buscador {
   flex: 100%;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   padding: 0.8rem 1rem; /* Espaciado interno */
   outline: none; /* quita el borde negro que sale al escribir */
 }
@@ -199,7 +201,7 @@
 /* ------------------------------- BOTONES ------------------------------- */
 .head_btn-login,
 .head_usuario {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
   cursor: pointer;
   text-decoration: none;
@@ -218,9 +220,9 @@
   background-color: #c8c8c8;
   color: black;
   text-decoration: none;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 .head_btn-registro:visited {

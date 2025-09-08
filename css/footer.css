@@ -6,12 +6,14 @@
   align-items: center;
   gap: 1.1rem;
   padding: 1.2rem;
+  font-size: 1.5rem;
   z-index: 10;
+  box-shadow: 0 -0.4em 0.2em black;
 }
 .footer a {
-  color: white;
+  color: #00f6d1;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 2.3rem;
 }
 .footer_links {
   display: flex;
