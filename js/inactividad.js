@@ -4,7 +4,6 @@ let temporizador;
 function reiniciarTemporizador() {
   clearTimeout(temporizador);
   temporizador = setTimeout(() => {
-    alert("Sesión cerrada por inactividad");
     window.location.href = "../app/cerrar_sesion.php?motivo=inactividad";
   }, tiempo_inactivo);
 }

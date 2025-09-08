@@ -66,6 +66,7 @@ main {
 .crear_cuenta,
 .login,
 .condiciones {
+  position: relative;
   width: 90%;
   font-size: 1.8rem;
 
@@ -73,6 +74,18 @@ main {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+.btn_mostrar-contraseña {
+  position: absolute;
+  right: 3rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* elimina padding extra */
+  width: 2.5rem; /* tamaño fijo del botón */
+}
+.btn_mostrar-contraseña img {
+  width: 100%;
 }
 .registro {
   font-size: 2rem;

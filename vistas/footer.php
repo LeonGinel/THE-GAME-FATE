@@ -7,7 +7,7 @@
     <div class="footer_links">
         <a href="#">Sobre nosotros</a> |
         <a href="#">Contactanos</a> |
-        <a href="index.php">Explorar juegos</a>
+        <a href="home.php">Explorar juegos</a>
     </div>
 
     <h2>Siguenos en nuestras redes sociales:</h2>

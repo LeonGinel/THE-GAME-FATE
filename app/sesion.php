@@ -8,7 +8,7 @@ if (isset($_SESSION['ultimo_acceso'])) {
     $tiempo_transcurrido = time() - $_SESSION['ultimo_acceso'];
     if ($tiempo_transcurrido > $tiempo_inactivo) {
         session_destroy();
-        header("Location: index.php?logout=exito"); 
+        header("Location: home.php?logout=exito"); 
         exit();
     }
 }

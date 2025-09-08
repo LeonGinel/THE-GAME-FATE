@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let btn_alternar_registro_login = form.querySelector(".btn_registro_login");
   let titulo_formulario = form.querySelector(".registro");
 
-  //Selección de los elementos de la cabecera
+  // Selección de los elementos de la cabecera
   let head_btn_registro = document.querySelector(".head_btn-registro");
   let head_btn_login = document.querySelector(".head_btn-login");
 
@@ -158,6 +158,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // ------- BOTÓN MOSTRAR/COULTAR CONTRASEÑA --------- //
+
+  // Botón mostrar/ocultar contraseña
+  let mostrar_ocultar_contraseña = document.querySelector(".btn_mostrar-contraseña");
+  let img_mostrar_ocultar_contraseña = mostrar_ocultar_contraseña.querySelector("img");
+
+  // Función para alternar entre mostrar y ocultar contraseña
+  mostrar_ocultar_contraseña.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (contraseña.type === "password") {
+      contraseña.type = "text";
+      img_mostrar_ocultar_contraseña.src = "../multimedia/iconos/ojo-cerrado.webp";
+    } else {
+      contraseña.type = "password";
+      img_mostrar_ocultar_contraseña.src = "../multimedia/iconos/ojo.webp";
+    }
+  });
+
   // ------- VERIFICACIÓN DE LA EXISTENCIA DEL EMAIL Y EL USUARIO --------- //
 
   // Funciones para la verificación
@@ -247,10 +266,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (respuesta === "admin") {
           alert("Bienvenido ADMINISTRADOR.");
-          window.location.href = "index.php";
+          window.location.href = "home.php";
         } else if (respuesta === "exito") {
           alert(`Bienvenido ${usuario.value}`);
-          window.location.href = "index.php";
+          window.location.href = "home.php";
         } else {
           alert(respuesta); // Muestra "Usuario no encontrado" o "Contraseña incorrecta"
         }

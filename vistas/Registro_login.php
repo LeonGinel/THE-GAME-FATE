@@ -41,6 +41,7 @@
 
                     <div class="contraseña">
                         <input type="password" name="contraseña" placeholder="Contraseña" autocomplete="off" required> *
+                        <button class="btn_mostrar-contraseña"><img src="../multimedia/iconos/ojo.webp" alt="mostrar"></button>
                     </div>
 
                     <div class="confirmar_contraseña">

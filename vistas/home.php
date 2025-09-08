@@ -9,7 +9,7 @@
 
         <link rel="stylesheet" href="../css/generales.css">
         <link rel="stylesheet" href="../css/header.css">
-        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/home.css">
         <link rel="stylesheet" href="../css/footer.css">
     </head>
     <body>
@@ -151,7 +151,7 @@
             <?php require_once "footer.php"; ?>
 
             <script src="../js/inactividad.js"></script>
-            <script src="../js/index.js"></script>
+            <script src="../js/home.js"></script>
             <script src="../js/index_carrusel.js"></script>
             <script src="../js/index_formulario.js"></script>
             <script src="../js/index_formulario_resultados.js"></script>

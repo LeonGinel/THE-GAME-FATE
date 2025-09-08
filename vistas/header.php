@@ -20,7 +20,7 @@
     <div class="head1">
         <h1>THE GAME GATE</h1>
 
-        <a class="head_btn-logo" href="index.php"><img class="head_logo-principal" src="../multimedia/logos/logo_principal.webp" alt="Logo"></a>
+        <a class="head_btn-logo" href="home.php"><img class="head_logo-principal" src="../multimedia/logos/logo_principal.webp" alt="Logo"></a>
 
         <form action="ficha_juego.php" method="GET" class="head_buscador-formulario">
             <div class="head_contenedor-buscador">
