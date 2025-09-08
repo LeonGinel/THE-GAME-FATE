@@ -1,4 +1,4 @@
-# The Game Gate
+# The Game Fate
 
 **The Game Gate** es una plataforma web para la comunidad gamer que permite descubrir, recomendar y compartir opiniones sobre videojuegos. Su objetivo es ayudar a los usuarios a decidir qué jugar mediante la experiencia colectiva de la comunidad.
 
