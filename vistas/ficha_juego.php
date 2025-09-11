@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="contenedor_criticas">
-                    <label>Críticas:</label>
+                    <label>Reviews:</label>
                     <section class="criticas"></section>
                 </div>
             </div>

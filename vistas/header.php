@@ -13,9 +13,9 @@
 
 
 <header class="head">
-    <!-- <div class="head1">
+    <div class="head1">
         <nav class="head_nav">
-            <button class="head_btn-menu">
+            <button type="button" class="head_btn-menu">
                 <img class=" head_menu-hamburguesa" src="../multimedia/iconos/menu_hamburguesa.webp" alt="menu hamburguesa">
             </button>
 
@@ -29,8 +29,7 @@
                 <li><a href="">Sobrevalorados</a></li>
             </ul>
         </nav>
-    </div> -->
-    <div class="head1">
+        
         <h1>THE GAME FATE</h1>
 
         <a class="head_btn-logo" href="home.php"><img class="head_logo-principal" src="../multimedia/logos/logo_principal.webp" alt="Logo"></a>
@@ -71,6 +70,6 @@
     <div class="head3"></div>
     <div class="head4"></div>
 
-    <script src="../js/header.js"></script>
+    <script src="../js/header_menu-hamburguesa.js"></script>
 
 </header>

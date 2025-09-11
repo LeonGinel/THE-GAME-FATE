@@ -2,48 +2,33 @@
 // --------------------------------------------- MENÚ HAMBURGUESA --------------------------------------------- //
 // ------------------------------------------------------------------------------------------------------------ //
 
-// // Seleccionar los elementos
-// let btn_menu = document.querySelector(".head_btn-menu");
-// let menu = document.querySelector(".head_menu");
+document.addEventListener("DOMContentLoaded", () => {
+  const btn_menu = document.querySelector(".head_btn-menu");
+  const menu = document.querySelector(".head_menu");
 
-// // Agregar evento de clic al botón ☰
-// btn_menu.addEventListener("click", function(evento) {
-//     menu.classList.toggle("open");   // Alternar la clase "open"
-// });
+  // Abrir/cerrar menú al pulsar el botón
+  btn_menu.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    menu.classList.toggle("open");
+  });
 
-// // Evento para cerrar el menú al hacer click fuera
-// document.addEventListener("click", function(evento) {
-//     if (!menu.contains(evento.target) && !btn_menu.contains(evento.target)) {
-//         menu.classList.remove("open");
-//     }
-// });
+  // Evitar que clicks dentro del menú cierren el menú
+  menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
 
-// ------------------------------------------------------------------------------------------------------------ //
-// ---------------------------------------- CAMBIO TRANSPARENCIA HEADER --------------------------------------- //
-// ------------------------------------------------------------------------------------------------------------ //
-
-document.addEventListener("DOMContentLoaded", function () {
-  let header = document.querySelector(".head");
-  let contenedor = document.querySelector(".contenedor_principal");
-
-  window.addEventListener("scroll", function () {
-    // Obtener la altura real actual del header en px
-    let headerHeight = header.offsetHeight;
-
-    let contenedorTop = contenedor.getBoundingClientRect().top;
-
-    if (contenedorTop <= headerHeight) {
-      // 90px es la altura del header
-      header.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; // Color sólido
-    } else {
-      header.style.backgroundColor = "rgba(34, 34, 34, 0.4)"; // Color transparente
+  // Click en cualquier otro lugar cierra el menú (SOLO CLICKS REALES DEL USUARIO)
+  document.addEventListener("click", (e) => {
+    if (e.isTrusted && !btn_menu.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove("open");
     }
   });
 });
 
-// ------------------------------------------------------------------------------------------------------------ //
-// ----------------------------------------- BARRA DE BUSQUEDA HEADER ----------------------------------------- //
-// ------------------------------------------------------------------------------------------------------------ //
+// // ------------------------------------------------------------------------------------------------------------ //
+// // ----------------------------------------- BARRA DE BUSQUEDA HEADER ----------------------------------------- //
+// // ------------------------------------------------------------------------------------------------------------ //
 
 let barra_busqueda_header = document.querySelector(".head_barra-buscador");
 let resultados_busqueda_tiempo_real = document.querySelector(".resultados_busqueda_tiempo_real");
@@ -56,6 +41,11 @@ barra_busqueda_header.addEventListener("input", function () {
   } else {
     resultados_busqueda_tiempo_real.innerHTML = ""; // Limpiar si no hay texto
   }
+});
+
+barra_busqueda_header.addEventListener("click", function () {
+  barra_busqueda_header.value = ""; // Vaciar el input
+  barra_busqueda_header.style.fontWeight = "normal"; // Restaurar peso de fuente
 });
 
 // Función de búsqueda de juegos en la BD
@@ -90,9 +80,4 @@ function buscar_juego_formulario(consulta, resultados_busqueda_tiempo_real, barr
   };
 
   xhr.send();
-
-  barra_busqueda_header.addEventListener("click", function () {
-    barra_busqueda_header.value = ""; // Vaciar el input
-    barra_busqueda_header.style.fontWeight = "normal"; // Restaurar peso de fuente
-  });
 }
