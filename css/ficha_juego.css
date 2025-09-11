@@ -276,6 +276,7 @@ main::after {
     border-radius: 0.8rem;
     font-weight: 600;
     font-size: 0.8em;
+    cursor: pointer;
   }
 
   /* MENSAJE SI NO ESTAS REGISTRADO */

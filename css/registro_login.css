@@ -126,3 +126,76 @@ main {
   color: red;
   display: none;
 }
+
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- RESPONSIVE !!! ---------------------------- */
+/* ------------------------------------------------------------------------ */
+@media (max-width: 480px) {
+  main {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding-top: 12rem;
+  }
+  .contenedor_principal {
+    width: 80%;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  /* ---- FORMULARIO ---- */
+  .formulario {
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    gap: 1.5rem; /* Espaciado entre elementos */
+  }
+  .formulario > div > input {
+    border-radius: 1.5rem;
+    height: 3rem;
+    padding-left: 1.5rem;
+  }
+  .email,
+  .usuario,
+  .contraseña,
+  .confirmar_contraseña,
+  .crear_cuenta,
+  .login,
+  .condiciones {
+  }
+  .registro {
+  }
+  .btn_mostrar-contraseña {
+    width: 1.8rem; /* tamaño fijo del botón */
+  }
+  .btn_mostrar-contraseña img {
+  }
+  .condiciones {
+    justify-self: center;
+    width: 90%;
+  }
+  .btn_crear_cuenta {
+    width: 50%;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .login {
+    font-size: 2rem;
+    gap: 2.2rem;
+  }
+  .btn_registro_login {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .formulario input::placeholder,
+  .formulario > div > input {
+    color: rgb(191, 191, 191);
+    font-size: 1.4rem;
+  }
+
+  /* ERRORES */
+  .error {
+    color: rgb(189, 0, 0);
+    display: none;
+    font-size: 2rem;
+  }
+}
