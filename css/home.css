@@ -1,13 +1,12 @@
 /* FONDO */
 main {
   position: relative;
-  min-height: 100vh;
-  padding-top: 18rem;
-  padding-bottom: 5rem;
-
   display: grid;
   justify-items: center;
   align-items: center;
+  min-height: 100vh;
+  padding-top: 18rem;
+  padding-bottom: 5rem;
   overflow: hidden;
   z-index: 0;
 }
@@ -34,9 +33,6 @@ main::after {
 
 /* CONTENIDO */
 .contenedor_principal {
-  /* background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(0.4rem);
-  background-color: rgba(42, 42, 42, 0.6); */
   color: white;
   width: 100%;
   max-width: 85rem;
@@ -53,8 +49,9 @@ main::after {
 .fondo1-form {
   background-color: rgba(54, 54, 54, 0.6);
   width: 100%;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 2rem;
+  box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.8);
 }
 .formulario {
   background-color: rgba(42, 42, 42, 0.8);
@@ -236,16 +233,15 @@ input[type="checkbox"]:checked + label {
 /* -------------------------------- RESULTADOS BUSQUEDA ---------------------------- */
 .fondo1-resultados {
   display: none;
-  background-color: rgb(62, 62, 62, 0.8);
-  padding: 0.7rem;
-}
-.fondo2-resultados {
-  background-color: rgba(54, 54, 54, 0.8);
-  padding: 1.2rem;
+  background-color: rgba(54, 54, 54, 0.6);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.8);
 }
 .fondo1-resultados,
 .fondo2-resultados {
-  border-radius: 2rem;
+  border-radius: 1.5rem;
 }
 #resultados {
   background-color: rgba(42, 42, 42, 0.8);
@@ -333,6 +329,7 @@ input[type="checkbox"]:checked + label {
   background-color: rgba(54, 54, 54, 0.6);
   padding: 1.2rem;
   border-radius: 2rem;
+  box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.8);
 }
 .carrusel {
   position: relative;
@@ -409,4 +406,237 @@ li p {
 }
 .carrusel_btn:hover {
   background-color: rgba(200, 200, 200, 0.7);
+}
+
+/* ------------------------------------------------------------------------ */
+/* ---------------------------- RESPONSIVE !!! ---------------------------- */
+/* ------------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+}
+@media (max-width: 480px) {
+  main {
+    padding-top: 15rem;
+    padding-bottom: 3rem;
+  }
+
+  /* -------------------- FORMULARIO -------------------- */
+  .fondo1-form {
+    padding: 0.5em;
+    border-radius: 1.5rem;
+  }
+  .formulario {
+    grid-template-rows: repeat(6, auto);
+    gap: 1.5rem;
+    border-radius: 1.5rem;
+    padding: 0.6em 1.8rem;
+    font-size: 2.2rem;
+  }
+
+  /* FILA 1 DEL FORMULARIO (TÍTULO) */
+  .fila1,
+  .fila2,
+  .fila3,
+  .fila4,
+  .fila5,
+  .fila6 {
+    gap: 1.5rem;
+  }
+  /* FILA 2 DEL FORMULARIO */
+  .multi {
+    flex: 2;
+  }
+
+  /* FILA 3 DEL FORMULARIO */
+  .genero-plataforma {
+    gap: 1.5rem;
+  }
+  .goty {
+    flex: 1.5;
+  }
+
+  /* FILA 4 DEL FORMULARIO */
+  .duracion-lanzamiento {
+    gap: 1.5rem;
+  }
+  .duracion,
+  .lanzamiento {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 0.5rem;
+  }
+  .selectores_duracion,
+  .selectores_lanzamiento {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .obra_maestra {
+    flex: 1;
+  }
+
+  /* FILA 5 DEL FORMULARIO */
+  .estrellas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
+  }
+
+  /* INPUTS */
+  .barra_buscador,
+  .generos,
+  .plataformas,
+  .minimo,
+  .maximo {
+    height: 2.6rem;
+    border: none;
+  }
+
+  /* BOTONES */
+  .btn_multi,
+  .btn_goty,
+  .btn_obra_maestra {
+    height: 2.6rem; /* altura uniforme */
+    border-radius: 1.3rem;
+  }
+  .btn_buscar {
+    padding: 0.2rem 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  /* EFECTOS */
+
+  input[type="radio"]:hover ~ label img,
+  input[type="radio"]:hover + label img,
+  input[type="checkbox"]:hover + label {
+    transform: scale(1.1);
+  }
+  input[type="radio"]:checked ~ label img,
+  input[type="radio"]:checked + label img,
+  input[type="checkbox"]:checked + label {
+    transform: scale(1.2);
+  }
+
+  /* -------------------------------- RESULTADOS BUSQUEDA ---------------------------- */
+  .fondo1-resultados {
+    display: none;
+    padding: 0.5rem;
+  }
+  .fondo1-resultados,
+  .fondo2-resultados {
+    border-radius: 1.5rem;
+  }
+  #resultados {
+    padding: 1.5rem;
+    font-size: 1.6rem;
+  }
+  .resultado {
+    gap: 1rem;
+    border: 0.1rem solid rgb(255, 255, 255);
+    border-radius: 1.5rem;
+  }
+  .portada {
+    flex: 3;
+    position: relative;
+    /* height: 100%; */
+    aspect-ratio: 4 / 2.95;
+    border: 0.1rem solid black;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  .informacion {
+    flex: 4;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .etiquetas {
+    flex: 1;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 0.6em;
+    padding: 0.5rem;
+  }
+  .etiqueta_goty,
+  .etiqueta_obra_maestra {
+    width: 90%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+  }
+  #paginacion {
+    gap: 0.8em;
+    padding-top: 0.5rem;
+  }
+  .btn-pagina {
+    width: 2rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.5rem;
+  }
+
+  /* -------------------------------- CARRUSEL ---------------------------- */
+  .fondo1-carrusel {
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+  }
+  .carrusel {
+    gap: 0.5em;
+    padding: 0.5rem 2.5rem;
+    font-size: 1.8rem;
+  }
+  .contenedor_carrusel {
+    width: 100%;
+    overflow: hidden;
+  }
+  .lista_carrusel li a {
+    position: relative;
+    display: block;
+    color: white;
+    border-radius: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .imagen_carrusel {
+    flex: 0 0 50%; /* Cada imagen ocupa la mitad del carrusel */
+  }
+  .imagen_carrusel img {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: 100%;
+    border: solid black;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  li p {
+    font-size: 2rem;
+  }
+  .carrusel_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    padding: 8rem 0;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .carrusel_btn-izq {
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    left: 0.09rem;
+  }
+  .carrusel_btn-dcha {
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    right: 0.1rem;
+  }
+  .carrusel_btn:hover {
+    background-color: rgba(200, 200, 200, 0.7);
+  }
 }

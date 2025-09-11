@@ -65,7 +65,7 @@ main::after {
   width: 100%;
   border-radius: 3rem;
   object-fit: cover;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
 .informacion_usuario h2 {
@@ -100,7 +100,7 @@ main::after {
   align-items: center;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.8);
 }
 
 /* ORO */

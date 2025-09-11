@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                   <div class="etiquetas">
                                       ${goty}
                                       ${obra_maestra}
-                                  <div/>
+                                  </div>
                               </div>`;
               resultados.innerHTML += juego_HTML;
             });

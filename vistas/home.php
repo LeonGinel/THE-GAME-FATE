@@ -115,13 +115,12 @@
                     
 
         <!----------------------------------------------- RESULTADOS DE BUSQUEDA ------------------------------------------------>
-                    <div class="fondo1-resultados">
-                        <div class="fondo2-resultados">            
-                            <section id="seccion_resultados"></section>
-                            <div id="paginacion"></div>
-                        </div>
+        
+                    <div class="fondo1-resultados">            
+                        <section id="seccion_resultados"></section>
+                        <div id="paginacion"></div>
                     </div>
-
+                   
         <!----------------------------------------------- CARRUSEL ------------------------------------------------>
                    
                     <div class="fondo1-carrusel">            
