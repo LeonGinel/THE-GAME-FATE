@@ -1,21 +1,6 @@
 <?php
 session_start();
 
-// Tiempo de inactividad permitido en segundos
-$tiempo_inactivo = 300; // 5 minutos
-
-if (isset($_SESSION['ultimo_acceso'])) {
-    $tiempo_transcurrido = time() - $_SESSION['ultimo_acceso'];
-    if ($tiempo_transcurrido > $tiempo_inactivo) {
-        session_destroy();
-        header("Location: home.php?logout=exito"); 
-        exit();
-    }
-}
-
-// Actualizar el último acceso
-$_SESSION['ultimo_acceso'] = time();
-
 if (!isset($_SESSION["rol"])) {
     $_SESSION["rol"] = "invitado";
 }

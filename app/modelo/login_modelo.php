@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($contraseña, $fila["contraseña"])) {
             $_SESSION["id_usuario"] = $fila["id_usuario"]; // Guardar ID del usuario
             $_SESSION["usuario"] = $usuario; // Guarda el nombre del usuario
+            $_SESSION['ultimo_acceso'] = time(); // Inicia contador de actividad
 
             // Asignar rol
             if ($fila["admin"] == 1) {

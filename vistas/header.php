@@ -69,7 +69,13 @@
    
     <div class="head3"></div>
     <div class="head4"></div>
-
-    <script src="../js/header_menu-hamburguesa.js"></script>
-
 </header>
+
+<script src="../js/header_menu-hamburguesa.js"></script>
+
+<!-- Variable que indica si hay sesión iniciada -->
+<script>
+  const usuarioLogueado = <?php echo isset($_SESSION['id_usuario']) ? 'true' : 'false'; ?> === 'true';
+</script>
+
+<script src="../js/inactividad.js"></script>

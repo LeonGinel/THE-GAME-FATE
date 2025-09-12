@@ -13,8 +13,7 @@ window.onload = function () {
     urlParams.delete("motivo");
 
     // Construir la nueva URL
-    const newSearch = urlParams.toString();
-    const newUrl = window.location.pathname + (newSearch ? "?" + newSearch : "");
+    const newUrl = window.location.pathname + (urlParams.toString() ? "?" + urlParams.toString() : "");
 
     history.replaceState({}, document.title, newUrl);
   }
