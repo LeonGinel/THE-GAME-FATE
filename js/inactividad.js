@@ -1,11 +1,10 @@
 if (usuarioLogueado) {
-  let tiempo_inactivo = 3000; // 3 segundos para prueba
+  let tiempo_inactivo = 300000; // 5 minutos en ms
   let temporizador;
 
   function reiniciarTemporizador() {
     clearTimeout(temporizador);
     temporizador = setTimeout(() => {
-      alert("Sesión caducada por inactividad");
       window.location.href = "../app/cerrar_sesion.php?motivo=inactividad";
     }, tiempo_inactivo);
   }

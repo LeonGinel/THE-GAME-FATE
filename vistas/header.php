@@ -75,7 +75,7 @@
 
 <!-- Variable que indica si hay sesión iniciada -->
 <script>
-  const usuarioLogueado = <?php echo isset($_SESSION['id_usuario']) ? 'true' : 'false'; ?> === 'true';
+  const usuarioLogueado = <?php echo isset($_SESSION['id_usuario']) ? 'true' : 'false'; ?>;
 </script>
 
 <script src="../js/inactividad.js"></script>
