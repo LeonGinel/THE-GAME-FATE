@@ -154,20 +154,8 @@ main {
     height: 3rem;
     padding-left: 1.5rem;
   }
-  .email,
-  .usuario,
-  .contraseña,
-  .confirmar_contraseña,
-  .crear_cuenta,
-  .login,
-  .condiciones {
-  }
-  .registro {
-  }
   .btn_mostrar-contraseña {
     width: 1.8rem; /* tamaño fijo del botón */
-  }
-  .btn_mostrar-contraseña img {
   }
   .condiciones {
     justify-self: center;
