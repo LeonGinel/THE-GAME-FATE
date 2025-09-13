@@ -44,35 +44,40 @@ if ($_SESSION["rol"] === "invitado") {
                                 <img src="../multimedia/imagenes/top1.png">
                             </div>
                             
-                            <button class="btn_top" value="1">+</button>
+                            <button class="btn_top" value="1"><img src="../multimedia/iconos/lapiz.webp" alt="editar"></button>
+
+                            <div class="buscador_top_1">
+                                <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
+                                <div class="resultados_top"></div>
+                            </div>
                         </div>
-                        <div class="buscador_top_1">
-                            <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
-                            <div class="resultados_top"></div>
-                        </div>
+                        
 
                         <div class="juego_2">
                             <div class="juego_2-corona">
                                 <img src="../multimedia/imagenes/top2.png">
                             </div>
                 
-                            <button class="btn_top" value="2">+</button>
+                            <button class="btn_top" value="2"><img src="../multimedia/iconos/lapiz.webp" alt="editar"></button>
+
+                             <div class="buscador_top_2">
+                                <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
+                                <div class="resultados_top"></div>
+                            </div>
                         </div>
-                        <div class="buscador_top_2">
-                            <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
-                            <div class="resultados_top"></div>
-                        </div>
+                       
 
                         <div class="juego_3">
                             <div class="juego_3-corona">
                                 <img src="../multimedia/imagenes/top3.png">
                             </div>
                             
-                            <button class="btn_top" value="3">+</button>
-                        </div>
-                        <div class="buscador_top_3">
-                            <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
-                            <div class="resultados_top"></div>
+                            <button class="btn_top" value="3"><img src="../multimedia/iconos/lapiz.webp" alt="editar"></button>
+
+                            <div class="buscador_top_3">
+                                <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
+                                <div class="resultados_top"></div>
+                            </div>
                         </div>
                     </section>
 
