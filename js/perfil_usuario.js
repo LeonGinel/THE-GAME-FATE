@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ------------------------------------------------------------------------------------------------ //
-// ---------------------------- FUNCIONAMIENTO DE LOS SELECTORES TOP 3 ---------------------------- //
+// ---------------------------------- CAMBIAR IMAGEN DE AVATAR ------------------------------------ //
 // ------------------------------------------------------------------------------------------------ //
 
 function cambiar_avatar() {
@@ -133,6 +133,10 @@ function cambiar_avatar() {
     xhr.send(datos);
   });
 }
+
+// ------------------------------------------------------------------------------------------------ //
+// ---------------------------- FUNCIONAMIENTO DE LOS SELECTORES TOP 3 ---------------------------- //
+// ------------------------------------------------------------------------------------------------ //
 
 // Función para seleccionar juegos para cada posición del TOP 3
 function seleccionar_top_3() {
@@ -247,30 +251,34 @@ function cargar_juegos_top(juegos_top) {
 // ------------------------------------------------------------------------------------------------ //
 
 // Función para alternar la visibilidad de los formularios
-function alternar_visibilidad_formularios(btn_activar_formulario, formulario, barra_busqueda_formulario) {
+function alternar_visibilidad_formularios(btn_activar_formulario, contenedor_formulario, formulario, barra_busqueda_formulario) {
   // Mostrar y ocultar formulario
-  btn_activar_formulario.addEventListener("click", function () {
-    // Alternar visibilidad del formulario
-    if (formulario.style.display === "grid") {
-      formulario.style.display = "none"; // Ocultar
-    } else {
-      // Si el formulario no está visible, ocultar todos los formularios y mostrar el seleccionado
-      const formularios = document.querySelectorAll(".contenedor_formularios_gestionar_juegos form");
-      formularios.forEach((form) => (form.style.display = "none")); // Ocultar todos los formularios
-
-      formulario.style.display = "grid"; // Mostrar
-      barra_busqueda_formulario.focus(); // Dar foco a la barra de búsqueda
+  contenedor_formulario.addEventListener("click", function (e) {
+    if (e.target === contenedor_formulario) {
+      // solo si clicas el overlay, no el form
+      contenedor_formulario.style.display = "none";
+      formulario.style.display = "none";
     }
+  });
+
+  btn_activar_formulario.addEventListener("click", () => {
+    const formularios = document.querySelectorAll(".contenedor_formularios_gestionar_juegos form");
+    formularios.forEach((form) => (form.style.display = "none")); // Ocultar todos los formularios
+
+    contenedor_formulario.style.display = "grid"; // Mostrar
+    formulario.style.display = "grid";
+    barra_busqueda_formulario.focus(); // Dar foco a la barra de búsqueda
   });
 }
 
 // Función ELIMINAR UN USUARIO de la BBDD
 function banear_usuario() {
   let btn_activar_formulario = document.querySelector(".btn_banear_usuario");
+  let contenedor_formulario = document.querySelector(".contenedor_formularios_gestionar_juegos");
   let formulario = document.querySelector(".formulario_banear_usuario");
   let barra_busqueda = document.querySelector(".buscador_banear");
 
-  alternar_visibilidad_formularios(btn_activar_formulario, formulario, barra_busqueda);
+  alternar_visibilidad_formularios(btn_activar_formulario, contenedor_formulario, formulario, barra_busqueda);
 
   let btn_banear = document.querySelector(".btn_banear");
 
@@ -304,6 +312,7 @@ function banear_usuario() {
 // función para MODIFICAR LOS DATOS DE UN JUEGO existente
 function modificar_juego() {
   let btn_activar_formulario = document.querySelector(".btn_modificar_juego");
+  let contenedor_formulario = document.querySelector(".contenedor_formularios_gestionar_juegos");
   let formulario = document.querySelector(".formulario_modificar_juego");
   let barra_busqueda = document.querySelector(".titulo_modificar");
   let resultados_busqueda = document.querySelector(".resultados_busqueda_midificar_juegos");
@@ -314,7 +323,7 @@ function modificar_juego() {
   let contenedor_plataformas = document.querySelector(".contenedor_plataformas_modificar");
   let lanzamiento = document.querySelector(".lanzamiento_modificar");
 
-  alternar_visibilidad_formularios(btn_activar_formulario, formulario, barra_busqueda);
+  alternar_visibilidad_formularios(btn_activar_formulario, contenedor_formulario, formulario, barra_busqueda);
 
   // Buscar juego en tiempo real (sugerencias del buscador)
   barra_busqueda.addEventListener("input", function () {
@@ -384,6 +393,7 @@ function modificar_juego() {
 
 function añadir_juego() {
   let btn_activar_formulario = document.querySelector(".btn_introducir_juego");
+  let contenedor_formulario = document.querySelector(".contenedor_formularios_gestionar_juegos");
   let formulario = document.querySelector(".formulario_introducir_juego");
   let barra_busqueda = document.querySelector(".titulo_añadir");
 
@@ -393,7 +403,7 @@ function añadir_juego() {
   let contenedor_plataformas = document.querySelector(".contenedor_plataformas_añadir");
   let lanzamiento = document.querySelector(".lanzamiento_añadir");
 
-  alternar_visibilidad_formularios(btn_activar_formulario, formulario, barra_busqueda);
+  alternar_visibilidad_formularios(btn_activar_formulario, contenedor_formulario, formulario, barra_busqueda);
 
   // Llenar los desplegables de géneros, plataformas y lanzamiento
   let { generos_seleccionados, plataformas_seleccionadas } = desplegables_generos_plataformas(
@@ -571,11 +581,12 @@ function desplegable_lanzamiento(año_lanzamiento) {
 // Función para ELIMINAR UN JUEGO de la BBDD
 function eliminar_juego() {
   let btn_activar_formulario = document.querySelector(".btn_borrar_juego");
+  let contenedor_formulario = document.querySelector(".contenedor_formularios_gestionar_juegos");
   let formulario = document.querySelector(".formulario_eliminar_juego");
   let barra_busqueda = document.querySelector(".buscador_eliminar_juego");
   let resultados_busqueda = document.querySelector(".resultados_busqueda_eliminar_juegos");
 
-  alternar_visibilidad_formularios(btn_activar_formulario, formulario, barra_busqueda);
+  alternar_visibilidad_formularios(btn_activar_formulario, contenedor_formulario, formulario, barra_busqueda);
 
   // Buscar juego en tiempo real (sugerencias del buscador)
   barra_busqueda.addEventListener("input", function () {

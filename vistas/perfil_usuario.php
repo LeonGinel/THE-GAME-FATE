@@ -45,25 +45,22 @@ if ($_SESSION["rol"] === "invitado") {
                             </div>
                             
                             <button class="btn_top" value="1"><img src="../multimedia/iconos/lapiz.webp" alt="editar"></button>
-
-                            <div class="buscador_top_1">
-                                <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
-                                <div class="resultados_top"></div>
-                            </div>
+                        </div>
+                        <div class="buscador_top_1">
+                            <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
+                            <div class="resultados_top"></div>
                         </div>
                         
-
                         <div class="juego_2">
                             <div class="juego_2-corona">
                                 <img src="../multimedia/imagenes/top2.png">
                             </div>
                 
                             <button class="btn_top" value="2"><img src="../multimedia/iconos/lapiz.webp" alt="editar"></button>
-
-                             <div class="buscador_top_2">
-                                <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
-                                <div class="resultados_top"></div>
-                            </div>
+                        </div>
+                        <div class="buscador_top_2">
+                            <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
+                            <div class="resultados_top"></div>
                         </div>
                        
 
@@ -73,16 +70,16 @@ if ($_SESSION["rol"] === "invitado") {
                             </div>
                             
                             <button class="btn_top" value="3"><img src="../multimedia/iconos/lapiz.webp" alt="editar"></button>
-
-                            <div class="buscador_top_3">
-                                <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
-                                <div class="resultados_top"></div>
-                            </div>
+                        </div>
+                        <div class="buscador_top_3">
+                            <input type="text" class="barra_busqueda_top" placeholder="Buscar juego..." autocomplete="off">
+                            <div class="resultados_top"></div>
                         </div>
                     </section>
 
                     <!--FORMULARIOS AÑADIR / MODIFICAR / ELIMINAR JUEGOS y USUARIOS DE LA BBDD (ADMIN) -->
                     <div class="contenedor_gestionar_juegos">
+
                         <!-- botones -->
                         <div class="contenedor_botones_gestionar_juegos">
                             <button class="btn_banear_usuario">
@@ -104,7 +101,7 @@ if ($_SESSION["rol"] === "invitado") {
 
                         <!-- formularios -->
                         <div class="contenedor_formularios_gestionar_juegos">
-
+                           
                             <!-- Formulario para eliminar Usuarios de la BBDD -->
                             <form method="POST" class="formulario_banear_usuario" name="formulario_banear_usuarios">
                                 <div class="buscar_usuario">
@@ -133,17 +130,17 @@ if ($_SESSION["rol"] === "invitado") {
                                 </div>
 
                                 <div class="plataforma">
-                                    <div class="contenedor_plataformas_modificar"></div>
                                     <select name="plataformas" class="plataformas_modificar" id="plataformas_modificar">
                                         <option value="plataforma" selected disabled>Plataforma</option>
                                     </select>
+                                    <div class="contenedor_plataformas_modificar"></div>
                                 </div>
 
                                 <div class="genero">
-                                    <div class="contenedor_generos_modificar"></div>
                                     <select name="generos" class="generos_modificar" id="generos_modificar">
                                         <option value="genero" selected disabled>Género</option>
                                     </select>
+                                    <div class="contenedor_generos_modificar"></div>
                                 </div>
 
                                 <div class="contenedor_lanzamiento">
