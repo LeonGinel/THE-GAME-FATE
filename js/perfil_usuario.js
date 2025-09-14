@@ -252,15 +252,6 @@ function cargar_juegos_top(juegos_top) {
 
 // Función para alternar la visibilidad de los formularios
 function alternar_visibilidad_formularios(btn_activar_formulario, contenedor_formulario, formulario, barra_busqueda_formulario) {
-  // Mostrar y ocultar formulario
-  contenedor_formulario.addEventListener("click", function (e) {
-    if (e.target === contenedor_formulario) {
-      // solo si clicas el overlay, no el form
-      contenedor_formulario.style.display = "none";
-      formulario.style.display = "none";
-    }
-  });
-
   btn_activar_formulario.addEventListener("click", () => {
     const formularios = document.querySelectorAll(".contenedor_formularios_gestionar_juegos form");
     formularios.forEach((form) => (form.style.display = "none")); // Ocultar todos los formularios
@@ -268,6 +259,22 @@ function alternar_visibilidad_formularios(btn_activar_formulario, contenedor_for
     contenedor_formulario.style.display = "grid"; // Mostrar
     formulario.style.display = "grid";
     barra_busqueda_formulario.focus(); // Dar foco a la barra de búsqueda
+  });
+
+  // Mostrar y ocultar formulario
+  contenedor_formulario.addEventListener("click", function (e) {
+    if (e.target === contenedor_formulario) {
+      // solo si clicas el overlay, no el form
+      contenedor_formulario.style.display = "none";
+      formulario.style.display = "none";
+      formulario.reset(); // Resetea todos los campos del formulario
+
+      // Limpiar arrays y contenedores visuales
+      generos_seleccionados.length = 0;
+      plataformas_seleccionadas.length = 0;
+      contenedor_generos.innerHTML = "";
+      contenedor_plataformas.innerHTML = "";
+    }
   });
 }
 
