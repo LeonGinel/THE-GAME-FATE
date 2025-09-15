@@ -226,54 +226,57 @@ if ($_SESSION["rol"] === "invitado") {
                     
                 <!-- APARTADO DE REVIEWS -->
                 <div class="contenedor_2">
-                    <button class="btn_agregar_juego">Agregar Juego</button>
+                    <button class="btn_agregar_juego">Nueva review</button>
 
-                    <form method="GET" class="formulario_agregar_juego" name="formulario">
-                        <div class="buscar_juego">
-                            <input type="text" name="buscador" class="buscador" placeholder="Buscar juego..." autocomplete="off" required>
-                            <div class="resultados_busqueda_formulario"></div>
-                        </div>
-                        
-                        <div class="valoracion">
-                            <label>Valoración:</label>
-                            <div class="estrellas">
-                                <input type="radio" id="estrella_5" name="estrella" value="5" required>
-                                <label for="estrella_5"><img src="../multimedia/iconos/estrella_llena.png" alt="5_estrellas" class="estrella"></label>
-
-                                <input type="radio" id="estrella_4" name="estrella" value="4">
-                                <label for="estrella_4"><img src="../multimedia/iconos/estrella_llena.png" alt="4_estrellas" class="estrella"></label>
-
-                                <input type="radio" id="estrella_3" name="estrella" value="3">
-                                <label for="estrella_3"><img src="../multimedia/iconos/estrella_llena.png" alt="3_estrellas" class="estrella"></label>
-
-                                <input type="radio" id="estrella_2" name="estrella" value="2">
-                                <label for="estrella_2"><img src="../multimedia/iconos/estrella_llena.png" alt="2_estrellas" class="estrella"></label>
-
-                                <input type="radio" id="estrella_1" name="estrella" value="1">
-                                <label for="estrella_1"><img src="../multimedia/iconos/estrella_llena.png" alt="1_estrellas" class="estrella"></label>
+                    <div class="contenedor_formulario_agregar_juego">
+                        <form method="GET" class="formulario_agregar_juego" name="formulario">
+                            <div class="buscar_juego">
+                                <input type="text" name="buscador" class="buscador" placeholder="Buscar juego..." autocomplete="off" required>
+                                <div class="resultados_busqueda_formulario"></div>
                             </div>
-                        </div>
+                            
+                            <div class="valoracion">
+                                <label>Valoración:</label>
+                                <div class="estrellas">
+                                    <input type="radio" id="estrella_5" name="estrella" value="5" required>
+                                    <label for="estrella_5"><img src="../multimedia/iconos/estrella_llena.png" alt="5_estrellas" class="estrella"></label>
 
-                        <div class="critica">
-                            <textarea class="critica_texto" name="critica" placeholder="Escribe una valoración personal..." rows="5"></textarea>
-                        </div>
-                        
-                        <div class="etiquetas">
-                            <div class="obra_maestra">
-                                <input type="checkbox" name="obra_maestra" class="etiqueta_obra_maestra" id="etiqueta_obra_maestra" value="obra_maestra">
-                                <label for="etiqueta_obra_maestra" class="btn_obra_maestra"></label>
+                                    <input type="radio" id="estrella_4" name="estrella" value="4">
+                                    <label for="estrella_4"><img src="../multimedia/iconos/estrella_llena.png" alt="4_estrellas" class="estrella"></label>
+
+                                    <input type="radio" id="estrella_3" name="estrella" value="3">
+                                    <label for="estrella_3"><img src="../multimedia/iconos/estrella_llena.png" alt="3_estrellas" class="estrella"></label>
+
+                                    <input type="radio" id="estrella_2" name="estrella" value="2">
+                                    <label for="estrella_2"><img src="../multimedia/iconos/estrella_llena.png" alt="2_estrellas" class="estrella"></label>
+
+                                    <input type="radio" id="estrella_1" name="estrella" value="1">
+                                    <label for="estrella_1"><img src="../multimedia/iconos/estrella_llena.png" alt="1_estrellas" class="estrella"></label>
+                                </div>
                             </div>
-                                
-                            <div class="sobrevalorado">
-                                <input type="checkbox" name="sobrevalorado" class="etiqueta_sobrevalorado" id="etiqueta_sobrevalorado" value="sobrevalorado">
-                                <label for="etiqueta_sobrevalorado" class="btn_sobrevalorado"></label>
-                            </div>     
-                        </div>
 
-                        <div class="guardar">
-                            <button class="btn_guardar">Guardar</button>
-                        </div>
-                    </form>
+                            <div class="critica">
+                                <textarea class="critica_texto" name="critica" placeholder="Escribe una valoración personal..." rows="5"></textarea>
+                            </div>
+                            
+                            <div class="etiquetas">
+                                <div class="obra_maestra">
+                                    <input type="checkbox" name="obra_maestra" class="etiqueta_obra_maestra" id="etiqueta_obra_maestra" value="obra_maestra">
+                                    <label for="etiqueta_obra_maestra" class="btn_obra_maestra"></label>
+                                </div>
+                                    
+                                <div class="sobrevalorado">
+                                    <input type="checkbox" name="sobrevalorado" class="etiqueta_sobrevalorado" id="etiqueta_sobrevalorado" value="sobrevalorado">
+                                    <label for="etiqueta_sobrevalorado" class="btn_sobrevalorado"></label>
+                                </div>     
+                            </div>
+
+                            <div class="guardar">
+                                <button class="btn_guardar">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                    
 
 
     <!------------------------------------------- LISTA JUEGOS AGREGADOS -------------------------------------------->

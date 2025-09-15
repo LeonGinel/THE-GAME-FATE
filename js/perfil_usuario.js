@@ -639,18 +639,29 @@ function eliminar_juego() {
 
 function agregar_juego() {
   let btn_agregar_juego = document.querySelector(".btn_agregar_juego");
+  let contenedor_formulario = document.querySelector(".contenedor_formulario_agregar_juego");
   let formulario = document.querySelector(".formulario_agregar_juego");
   let barra_busqueda_formulario = document.querySelector(".buscador");
   let resultados_busqueda_formulario = document.querySelector(".resultados_busqueda_formulario");
 
-  // Mostrar y ocultar formulario
   btn_agregar_juego.addEventListener("click", function () {
     // Alternar visibilidad del formulario
     if (formulario.style.display === "grid") {
       formulario.style.display = "none"; // Ocultar
     } else {
+      contenedor_formulario.style.display = "grid";
       formulario.style.display = "grid"; // Mostrar
       barra_busqueda_formulario.focus(); // Dar foco a la barra de búsqueda
+    }
+  });
+
+  // Mostrar y ocultar formulario
+  contenedor_formulario.addEventListener("click", function (e) {
+    if (e.target === contenedor_formulario) {
+      // solo si clicas el overlay, no el form
+      contenedor_formulario.style.display = "none";
+      formulario.style.display = "none";
+      formulario.reset(); // Resetea todos los campos del formulario
     }
   });
 
