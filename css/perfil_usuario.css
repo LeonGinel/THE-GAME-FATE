@@ -218,7 +218,7 @@ main::after {
   backdrop-filter: blur(0.4rem);
   z-index: 9999;
 }
-form {
+.contenedor_principal form {
   display: none; /* ocultos por defecto */
   justify-items: center;
   align-items: center;
@@ -287,7 +287,6 @@ form {
   backdrop-filter: blur(0.4rem);
   z-index: 9999;
 }
-
 .buscar_juego {
   width: 100%;
 }
@@ -295,12 +294,11 @@ form {
 .critica,
 .etiquetas,
 .guardar {
-  width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  width: 100%;
 }
 .etiquetas {
   width: 80%;
@@ -312,6 +310,26 @@ form {
   height: 3rem;
   border-radius: 1.5rem;
   padding-left: 1rem;
+  color: black;
+}
+.buscar_juego {
+  position: relative;
+}
+.resultados_busqueda_formulario {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(244, 246, 247, 0.8);
+  color: black;
+  width: 100%;
+  border-radius: 1.5rem;
+  z-index: 100;
+  overflow: hidden;
 }
 .estrellas {
   display: flex;
@@ -337,7 +355,7 @@ form {
 .btn_sobrevalorado {
   display: inline-block;
   border-radius: 1rem;
-  width: 50%;
+  width: 75%;
   height: 5rem;
   background-position: center;
   background-size: cover;
@@ -350,10 +368,10 @@ form {
 }
 .btn_guardar {
   background-color: #c8c8c8;
+  padding: 0 0.6em;
   border-radius: 0.5rem;
-  width: 30%;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 600;
   cursor: pointer;
 }
 input[type="radio"],
@@ -439,6 +457,9 @@ input[type="checkbox"] {
   width: 100%;
   padding: 0 2rem 1rem;
   font-size: 1.6rem;
+}
+.texto_critica {
+  text-align: justify;
 }
 
 /* -------------------------- EFECTOS -------------------------- */
@@ -603,6 +624,7 @@ input[type="checkbox"]:checked + label {
   .contenedor_2 {
     border-left: none;
     padding: 1rem;
+    gap: 1.6em;
   }
 
   .btn_agregar_juego {
@@ -613,181 +635,40 @@ input[type="checkbox"]:checked + label {
     font-weight: 800;
   }
 
-  /* FORMULARIO NUEVO JUEGO */
-  .buscar_juego {
-    width: 100%;
-  }
-  .valoracion,
-  .critica,
-  .etiquetas,
-  .guardar {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  .etiquetas {
-    width: 80%;
-  }
-  .buscador,
-  .barra_busqueda_top {
-    background-color: rgba(253, 254, 254, 0.8);
-    width: 100%;
-    height: 3rem;
-    border-radius: 1.5rem;
-    padding-left: 1rem;
-  }
-  .estrellas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
-  }
-  .critica_texto {
-    background-color: rgba(253, 254, 254, 0.8);
-    width: 90%;
-    border-radius: 1rem;
-    padding: 0.8rem;
-  }
-  .obra_maestra,
-  .sobrevalorado {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .btn_obra_maestra,
-  .btn_sobrevalorado {
-    display: inline-block;
-    border-radius: 1rem;
-    width: 50%;
-    height: 5rem;
-    background-position: center;
-    background-size: cover;
-  }
-  .btn_obra_maestra {
-    background-image: url(../multimedia/logos/obra_maestra.jpg);
-  }
-  .btn_sobrevalorado {
-    background-image: url(../multimedia/logos/sobrevalorado.jpg);
-  }
-  .btn_guardar {
-    background-color: #c8c8c8;
-    border-radius: 0.5rem;
-    width: 30%;
-    font-size: 1.8rem;
-    font-weight: 400;
-    cursor: pointer;
-  }
-  input[type="radio"],
-  input[type="checkbox"] {
-    display: none;
-  }
-
   /* LISTA JUEGOS GUARDADOS  */
   .lista_juegos_agregados {
-    display: grid;
-    gap: 2rem;
-    border-radius: 1rem;
-    width: 100%;
-    padding: 2.5rem;
-    font-size: 1rem;
-  }
-  [class^="juego_item_"] {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-  }
-  .contenedor_review {
-    background-color: rgba(42, 42, 42, 0.7);
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 1.5rem;
-  }
-  .contenedor {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
-    padding: 1rem;
+    padding: 0;
   }
   .informacion {
-    display: grid;
-    width: 55%;
-    gap: 0.2rem;
+    width: 60%;
   }
   .informacion a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
-  .portada {
-    width: 40%;
-    height: 8rem;
-    border: solid black;
-    border-radius: 1.5rem;
-    overflow: hidden;
-  }
-  .portada_imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .etiqueta_estrellas {
-    width: 70%;
-  }
-  .etiqueta {
-    width: 15%;
-    aspect-ratio: 1 / 1;
-    border-radius: 1rem;
-    overflow: hidden;
-  }
-  .imagen_etiqueta {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .btn_eliminar_review {
-    background-color: #c8c8c8;
-    border-radius: 0.7rem;
-    padding: 0.2rem;
-    cursor: pointer;
-  }
-  .contenedor_critica {
-    gap: 1rem;
-    width: 100%;
-    padding: 0 2rem 1rem;
-    font-size: 1.6rem;
-  }
+}
 
-  /* -------------------------- EFECTOS -------------------------- */
+.texto_critica {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 
-  /* EFECTOS */
-
-  input + label {
-    height: 2.3rem;
-    cursor: pointer;
-    filter: brightness(0.9);
-    transition: transform 0.4s ease, filter 0.4s ease; /* Efecto suave */
-  }
-  input[type="radio"]:hover ~ label,
-  input[type="radio"]:hover + label,
-  input[type="checkbox"]:hover + label {
-    transform: scale(1.2); /* Aumenta el tamaño */
-    filter: brightness(1.2); /* Hace la imagen más brillante */
-  }
-
-  input[type="radio"]:checked ~ label,
-  input[type="radio"]:checked + label,
-  input[type="checkbox"]:checked + label {
-    transform: scale(1.2);
-    filter: brightness(1.4);
-  }
+  overflow: hidden;
+  border-left: 0.1rem solid;
+  padding: 0;
+  padding-left: 1.2rem;
+}
+.texto_critica.expandir {
+  -webkit-line-clamp: unset;
+}
+.btn_expandir {
+  grid-column: 2 / 3;
+  justify-self: end;
+  background-color: rgb(0, 246, 209, 0.4);
+  width: 8rem;
+  padding: 0.1em 0.2em;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 0.8em;
+  cursor: pointer;
 }
