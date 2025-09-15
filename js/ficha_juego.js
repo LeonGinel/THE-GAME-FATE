@@ -117,8 +117,13 @@ function cargar_criticas(criticas_usuarios) {
             `;
       contenedor_criticas.prepend(critica_item);
 
-      let critica_texto = document.querySelector(".critica_texto");
-      let btn_expandir = document.querySelector(".btn_expandir");
+      let critica_texto = critica_item.querySelector(".critica_texto");
+      let btn_expandir = critica_item.querySelector(".btn_expandir");
+
+      // Ocultar botón "ver más" si no se corta el texto
+      if (critica_texto.scrollHeight <= critica_texto.clientHeight) {
+        btn_expandir.style.display = "none";
+      }
 
       btn_expandir.addEventListener("click", function () {
         critica_texto.classList.toggle("expandir");

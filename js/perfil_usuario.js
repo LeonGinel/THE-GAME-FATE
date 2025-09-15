@@ -809,10 +809,24 @@ function agregar_juego_lista(id_review, id_juego, titulo, portada, puntuacion, c
                 <div class="contenedor_critica">
                     <p class="texto_critica">${critica}</p>
                 </div>  
+                <button class="btn_expandir">Ver más</button>
             </div>  
     `;
 
   lista_juegos_agregados.prepend(juego_agregado); // Agrega el nuevo juego al inicio de la lista
+
+  // --- Lógica del botón "Ver más" solo si el texto se corta ---
+  let texto_critica = juego_agregado.querySelector(".texto_critica");
+  let btn_expandir = juego_agregado.querySelector(".btn_expandir");
+
+  if (texto_critica.scrollHeight <= texto_critica.clientHeight) {
+    btn_expandir.style.display = "none"; // Oculta si no hay texto oculto
+  }
+
+  btn_expandir.addEventListener("click", () => {
+    texto_critica.classList.toggle("expandir");
+    btn_expandir.textContent = texto_critica.classList.contains("expandir") ? "Ver menos" : "Ver más";
+  });
 
   eliminar_review();
 }
