@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // LLamar a al función para cambiar la imagen de avatar
-            cambiar_avatar();
+            cambiar_avatar(id_usuario, id_usuario_logueado);
             // Llamar a la función para manejar los botones del TOP
             seleccionar_top_3();
             // LLamar a las funciones de administrador
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ---------------------------------- CAMBIAR IMAGEN DE AVATAR ------------------------------------ //
 // ------------------------------------------------------------------------------------------------ //
 
-function cambiar_avatar() {
+function cambiar_avatar(id_usuario, id_usuario_logueado) {
   let imagen_perfil = document.querySelector(".imagen_perfil");
   let input_avatar = document.getElementById("input_avatar");
 
