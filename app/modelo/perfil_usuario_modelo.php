@@ -87,8 +87,16 @@ function obtener_informacion_usuario ($conexion) {
 }
 
 function cambia_avatar ($conexion) {
-    $id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : '';
-    $avatar = isset($_FILES['avatar']) ? $_FILES['avatar'] : '';
+    // Comprobar que el usuario está logueado
+    if (!isset($_SESSION['id_usuario'])) {
+        exit;}
+    $id_usuario = $_SESSION['id_usuario'];
+
+    // Comprobar que se ha subido un archivo
+    if (!isset($_FILES['avatar'])) {
+        exit;
+    }
+    $avatar = $_FILES['avatar'];
 
     // Extraer extensión real
     $extension = pathinfo($avatar['name'], PATHINFO_EXTENSION);
@@ -108,7 +116,7 @@ function cambia_avatar ($conexion) {
 }
 
 
-// -------------- CONSULTAS DE LOS BUSCADORES (TOP_3 Y FORMULARIO) --------------- //
+// -------------- CONSULTAS DE LOS BUSCADORES (avata Y FORMULARIO) --------------- //
 
 function consultas_buscadores ($conexion) {
     // Recuperar el parámetro 'query' de la URL

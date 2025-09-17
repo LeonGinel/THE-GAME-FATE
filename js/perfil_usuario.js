@@ -112,30 +112,37 @@ function cambiar_avatar() {
   let imagen_perfil = document.querySelector(".imagen_perfil");
   let input_avatar = document.getElementById("input_avatar");
 
-  imagen_perfil.addEventListener("click", () => input_avatar.click());
+  // Evita que el avatar se pueda cambiar en perfiles ajenos
+  if (id_usuario !== id_usuario_logueado) {
+    // Bloquear interacción
+    input_avatar.disabled = true;
+    imagen_perfil.style.cursor = "default";
+  } else {
+    imagen_perfil.addEventListener("click", () => input_avatar.click());
 
-  input_avatar.addEventListener("change", () => {
-    let avatar = input_avatar.files[0];
-    if (!avatar) return;
+    input_avatar.addEventListener("change", () => {
+      let avatar = input_avatar.files[0];
+      if (!avatar) return;
 
-    // Previsualización inmediata
-    imagen_perfil.src = URL.createObjectURL(avatar);
+      // Previsualización inmediata
+      imagen_perfil.src = URL.createObjectURL(avatar);
 
-    // Subida al servidor
-    const datos = new FormData();
-    datos.append("avatar", avatar);
+      // Subida al servidor
+      const datos = new FormData();
+      datos.append("avatar", avatar);
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "../app/modelo/perfil_usuario_modelo.php", true);
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "../app/modelo/perfil_usuario_modelo.php", true);
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        const respuesta = JSON.parse(xhr.responseText);
-      }
-    };
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          const respuesta = JSON.parse(xhr.responseText);
+        }
+      };
 
-    xhr.send(datos);
-  });
+      xhr.send(datos);
+    });
+  }
 }
 
 // ------------------------------------------------------------------------------------------------ //
