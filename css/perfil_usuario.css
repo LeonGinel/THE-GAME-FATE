@@ -455,7 +455,7 @@ input[type="checkbox"] {
 .contenedor_critica {
   gap: 1rem;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 2rem 1rem;
   font-size: 1.6rem;
 }
 .texto_critica {
@@ -465,7 +465,7 @@ input[type="checkbox"] {
   overflow: hidden;
 
   text-overflow: ellipsis; /* Puntos suspensivos */
-  max-height: calc(1em * 4); /* 3 líneas exactas */
+  max-height: calc(1.2em * 4); /* 4 líneas exactas */
 
   text-align: justify;
 }
@@ -478,7 +478,7 @@ input[type="checkbox"] {
   justify-self: end;
   background-color: rgb(0, 246, 209, 0.4);
   width: 8rem;
-  margin: 1rem;
+  margin: 0 1rem 1rem;
   padding: 0.1em 0.2em;
   border: none;
   border-radius: 0.6rem;
