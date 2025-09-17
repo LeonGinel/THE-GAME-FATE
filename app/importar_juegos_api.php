@@ -1,5 +1,4 @@
 <?php
-
 require_once 'conexion/conexion_bbdd.php';
 
 // Función para obtener juegos de RAWG API

@@ -72,10 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
               btns_eliminar_review.forEach((boton) => (boton.style.display = "none"));
             }
 
-            // Desactivar los botones de gestion si no es el admin
-            let btns_gestion = document.querySelector(".contenedor_botones_gestionar_juegos");
+            // Desactivar los botones de gestion si no es el admin y ajustar copntenedores
+            let btns_gestion = document.querySelector(".contenedor_gestionar_juegos");
+            let top3 = document.querySelector(".top_3");
             if (rol_usuario !== "admin" || id_usuario !== id_usuario_logueado) {
               btns_gestion.style.display = "none";
+              top3.classList.remove("admin");
+            } else {
+              top3.classList.add("admin");
             }
 
             // LLamar a al función para cambiar la imagen de avatar
