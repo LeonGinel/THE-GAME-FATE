@@ -20,9 +20,9 @@ if (isset($_GET['id_usuario'])) {
     exit;
 }
 
-// Si está cambiado el avatar
+// Si está cambiado el avatar 
 if (isset($_FILES['avatar'])) {
-    cambia_avatar($conexion);
+    cambia_avatar($conexion); 
 }
 
 // Si se está haciendo una búsqueda
@@ -107,8 +107,10 @@ function cambia_avatar ($conexion) {
     // Mover el archivo a la carpeta
     move_uploaded_file($avatar['tmp_name'], $ruta_destino);
 
-    // Guardar ruta en la base de datos
-    $sql = "UPDATE usuarios SET imagen_perfil='$ruta_destino' WHERE id_usuario=$id_usuario";
+    // Guardar ruta en la base de datos (SIN el ../)
+    $ruta_bbdd = "../multimedia/avatares/avatar_" . $id_usuario . "." . $extension;
+
+    $sql = "UPDATE usuarios SET imagen_perfil='$ruta_bbdd' WHERE id_usuario=$id_usuario";
     $conexion->query($sql);
 
     echo json_encode(['estado' => 'exito']);
