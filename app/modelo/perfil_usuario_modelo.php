@@ -20,8 +20,8 @@ if (isset($_GET['id_usuario'])) {
     exit;
 }
 
-// Si esta cambiado el avatar
-if (isset($_POST['avatar'])) {
+// Si está cambiado el avatar
+if (isset($_FILES['avatar'])) {
     cambia_avatar($conexion);
 }
 
@@ -102,7 +102,7 @@ function cambia_avatar ($conexion) {
     $extension = pathinfo($avatar['name'], PATHINFO_EXTENSION);
 
     // Carpeta destino
-    $ruta_destino = "../multimedia/avatares/avatar_" . $id_usuario . "." . $extension;
+    $ruta_destino = "../../multimedia/avatares/avatar_" . $id_usuario . "." . $extension;
 
     // Mover el archivo a la carpeta
     move_uploaded_file($avatar['tmp_name'], $ruta_destino);
