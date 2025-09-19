@@ -518,7 +518,7 @@ input[type="checkbox"]:checked + label {
 /* ------------------------------------------------------------------------ */
 @media (max-width: 480px) {
   main {
-    padding-top: 15rem;
+    padding-top: 13rem;
     padding-bottom: 3rem;
   }
   .contenedor_principal {

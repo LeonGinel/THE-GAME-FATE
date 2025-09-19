@@ -14,36 +14,38 @@
 
 <header class="head">
     <div class="head1">
-        <nav class="head_nav">
-            <button type="button" class="head_btn-menu">
-                <img class=" head_menu-hamburguesa" src="../multimedia/iconos/menu_hamburguesa.webp" alt="menu hamburguesa">
-            </button>
-
-            <ul class="head_menu">
-                <li><a href="">Juegos</a></li>
-                <li><a href="">Novedades</a></li>
-                <li><a href="">Mejor valorados</a></li>
-                <li><a href="">Más jugados</a></li>
-                <li><a href="">Gotys</a></li>
-                <li><a href="">Obras maestras</a></li>
-                <li><a href="">Sobrevalorados</a></li>
-            </ul>
-        </nav>
-        
         <h1>THE GAME FATE</h1>
-
+        
         <a class="head_btn-logo" href="home.php"><img class="head_logo-principal" src="../multimedia/logos/logo_principal.webp" alt="Logo"></a>
 
-        <form action="ficha_juego.php" method="GET" class="head_buscador-formulario">
-            <div class="head_contenedor-buscador">
-                <input type="text" name="buscador" placeholder="Buscar" class="head_barra-buscador">
-                <button type="submit" class="head_btn-lupa">
-                    <img class="head_icono-lupa" src="../multimedia/iconos/lupa.png" alt="Buscar">
+        <div class="head1_buscador-y-nav">
+            <form action="ficha_juego.php" method="GET" class="head_buscador-formulario" autocomplete="off">
+                <div class="head_contenedor-buscador">
+                    <input type="text" name="buscador" placeholder="Buscar" class="head_barra-buscador">
+                    <button type="submit" class="head_btn-lupa">
+                        <img class="head_icono-lupa" src="../multimedia/iconos/lupa.png" alt="Buscar">
+                    </button>
+                </div>
+                
+                <div class="resultados_busqueda_tiempo_real"></div>
+            </form>
+
+            <nav class="head_nav">
+                <button type="button" class="head_btn-menu">
+                    <img class=" head_menu-hamburguesa" src="../multimedia/iconos/menu_hamburguesa.webp" alt="menu hamburguesa">
                 </button>
-            </div>
-            
-            <div class="resultados_busqueda_tiempo_real"></div>
-        </form>
+
+                <ul class="head_menu">
+                    <li><a href="">Juegos</a></li>
+                    <li><a href="">Novedades</a></li>
+                    <li><a href="">Mejor valorados</a></li>
+                    <li><a href="">Más jugados</a></li>
+                    <li><a href="">Gotys</a></li>
+                    <li><a href="">Obras maestras</a></li>
+                    <li><a href="">Sobrevalorados</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
     
     <div class="head2">
