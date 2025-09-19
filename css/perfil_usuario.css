@@ -46,7 +46,7 @@ main::after {
   display: grid;
   align-items: center;
   justify-items: center;
-  gap: 9rem;
+  gap: 3rem;
   align-self: start; /* Asegura que el contenedor 1 no se estire y solo ocupe el espacio necesario */
 }
 
@@ -62,8 +62,9 @@ main::after {
   padding: 2rem;
 }
 .imagen_perfil {
-  width: 100%;
-  border-radius: 3rem;
+  width: 16em;
+  height: 16em;
+  border-radius: 2em;
   object-fit: cover;
   box-shadow: 0 0.6em 1em rgba(0, 0, 0, 0.8);
   cursor: pointer;
@@ -190,6 +191,7 @@ main::after {
   display: grid;
   justify-items: center;
   align-items: center;
+  width: 90%;
   border-radius: 1.5rem;
   padding: 1rem;
 }
@@ -547,7 +549,8 @@ input[type="checkbox"]:checked + label {
     height: 100%;
   }
   .imagen_perfil {
-    border-radius: 1.5rem;
+    width: 11em;
+    height: 11em;
   }
   .informacion_usuario h2 {
     font-size: 3rem;
