@@ -11,33 +11,6 @@ btn_menu.addEventListener("click", function (evento) {
   menu.classList.toggle("open"); // Alternar la clase "open"
 });
 
-// Evento para cerrar el menú al hacer click fuera
-document.addEventListener("click", function (evento) {
-  if (!menu.contains(evento.target) && !btn_menu.contains(evento.target)) {
-    menu.classList.remove("open");
-  }
-});
-
-// ------------------------------------------------------------------------------------------------------------ //
-// ---------------------------------------- CAMBIO TRANSPARENCIA HEADER --------------------------------------- //
-// ------------------------------------------------------------------------------------------------------------ //
-
-document.addEventListener("DOMContentLoaded", function () {
-  let header = document.querySelector(".head");
-  let contenedor = document.querySelector(".contenedor_principal");
-
-  window.addEventListener("scroll", function () {
-    let contenedorTop = contenedor.getBoundingClientRect().top;
-
-    if (contenedorTop <= 90) {
-      // 90px es la altura del header
-      header.style.backgroundColor = "rgba(34, 34, 34, 0.9)"; // Color sólido
-    } else {
-      header.style.backgroundColor = "rgba(34, 34, 34, 0.4)"; // Color transparente
-    }
-  });
-});
-
 // ------------------------------------------------------------------------------------------------------------ //
 // ----------------------------------------- BARRA DE BUSQUEDA HEADER ----------------------------------------- //
 // ------------------------------------------------------------------------------------------------------------ //
@@ -51,7 +24,8 @@ barra_busqueda_header.addEventListener("input", function () {
   if (consulta.length > 0) {
     buscar_juego_formulario(consulta, resultados_busqueda_tiempo_real, barra_busqueda_header);
   } else {
-    resultados_busqueda_tiempo_real.innerHTML = ""; // Limpiar si no hay texto
+    resultados_busqueda_tiempo_real.style.display = "none";
+    resultados_busqueda_tiempo_real.innerHTML = "";
   }
 });
 
@@ -94,13 +68,19 @@ function buscar_juego_formulario(consulta, resultados_busqueda_tiempo_real, barr
   });
 }
 
-// Cerrar lista de resultados al hacer clic fuera
-document.addEventListener("click", function (evento) {
-  let contenedor_buscador = document.querySelector(".head_contenedor-buscador");
+// ------------------------------------------------------------------------------------------------------------ //
+// ----------------------------- EVENTO GLOBAL: CIERRE MENÚ Y RESULTADOS BUSCADOR ----------------------------- //
+// ------------------------------------------------------------------------------------------------------------ //
 
-  // Si el clic NO fue dentro del contenedor del buscador NI en la lista de resultados
-  if (!contenedor_buscador.contains(evento.target) && !resultados_busqueda_tiempo_real.contains(evento.target)) {
-    resultados_busqueda_tiempo_real.innerHTML = "";
+document.addEventListener("click", function (evento) {
+  // Menú hamburguesa
+  if (!menu.contains(evento.target) && !btn_menu.contains(evento.target)) {
+    menu.classList.remove("open");
+  }
+
+  // Resultados del buscador
+  if (!resultados_busqueda_tiempo_real.contains(evento.target) && !barra_busqueda_header.contains(evento.target)) {
     resultados_busqueda_tiempo_real.style.display = "none";
+    resultados_busqueda_tiempo_real.innerHTML = "";
   }
 });

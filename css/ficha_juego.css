@@ -227,8 +227,8 @@ main::after {
 /* ------------------------------------------------------------------------ */
 @media (max-width: 480px) {
   main {
-    padding-top: 15rem;
-    padding-bottom: 3rem;
+    padding-top: 11rem;
+    padding-bottom: 2rem;
   }
   .contenedor_principal {
     color: white;

@@ -206,6 +206,13 @@
     width: 90%;
   }
   /* - BUSCADOR - */
+  .head1_buscador-y-nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
   .head_contenedor-buscador {
     height: 2rem;
   }
@@ -226,45 +233,11 @@
     background-color: rgba(42, 42, 42, 0.8);
     color: white;
   }
-
-  .head_btn-lupa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-  }
   .head_icono-lupa {
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0.6;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* animación suave */
-  }
-  .head_btn-lupa:hover .head_icono-lupa {
-    transform: scale(1.2); /* aumenta ligeramente */
-    opacity: 1; /* totalmente opaca */
-  }
-
-  /* -------- HEAD 2 -------- */
-  .head2 {
-    height: 2.6rem;
-    padding: 0.2rem;
-  }
-
-  .head3 {
+    width: 1.3rem;
     height: 1.3rem;
   }
-  .head1_buscador-y-nav {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-  }
-
-  /* ------------------------------- MENÚ HAMBURGUESA ------------------------------- */
+  /* - MENÚ HAMBURGUESA - */
   .head_nav {
     display: grid;
     justify-content: center;
@@ -284,13 +257,13 @@
   .head_menu {
     /* Lista del menú (oculta por defecto) */
     display: none;
-    background-color: rgba(34, 34, 34, 0.9);
+    background-color: rgba(34, 34, 34, 1);
     max-width: 40%;
     list-style: none;
     flex-direction: column;
     position: absolute;
     top: 3rem;
-    left: 0;
+    right: 0;
     text-align: left;
     font-size: 2rem;
     gap: 0.5rem;
@@ -317,17 +290,16 @@
     background-color: rgba(0, 0, 0, 0.8);
   }
 
-  /* ---------------------- BIENVENIDO/REGISTRO/LOGIN ---------------------- */
-  .head2_bienvenido,
-  .head2-btns,
-  .head2_btns-login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* -------- HEAD 2 -------- */
+  .head2 {
+    height: 2.6rem;
+    padding: 0.2rem;
+    padding-left: 1.5rem;
   }
+  /* - BIENVENIDO/REGISTRO/LOGIN - */
   .head2_bienvenido {
-    gap: 22rem;
-    padding-right: 2.6rem;
+    gap: 13rem;
+    padding-right: 0;
   }
   .head2-btns {
     gap: 1rem;
@@ -338,31 +310,20 @@
   }
   .head_btn-login,
   .head_usuario {
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
+    font-size: 1.9rem;
   }
   .head_btn-perfil {
-    display: inline-block;
-    background-color: #c8c8c8;
-    padding: 0.2rem 0.6rem;
-    border-radius: 0.8rem;
-    cursor: pointer;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.5rem;
   }
   .head_btn-registro,
   .head_btn-logout {
-    display: inline-block;
-    padding: 0 1rem;
-    background-color: #c8c8c8;
-    color: black;
-    border-radius: 0.5rem;
+    padding: 0 0.8rem;
     font-size: 1.8rem;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
   }
-  .head_btn-registro:visited {
-    color: black;
+
+  /* -------- HEAD 3 -------- */
+  .head3 {
+    height: 1.3rem;
   }
 }
