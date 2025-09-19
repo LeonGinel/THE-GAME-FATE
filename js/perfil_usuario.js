@@ -645,7 +645,7 @@ function eliminar_juego() {
 }
 
 // ------------------------------------------------------------------------------------------------ //
-// ------------------------ FUNCIONAMIENTO DEL FORMULARIO DE AGREGAR REVIEW ------------------------ //
+// ------------------------ FUNCIONAMIENTO DEL FORMULARIO DE AGREGAR REVIEW ----------------------- //
 // ------------------------------------------------------------------------------------------------ //
 
 function agregar_juego() {
@@ -724,6 +724,7 @@ function agregar_juego() {
 
           formulario.reset(); // Limpiar formulario
           formulario.style.display = "none"; // Ocultar formulario
+          contenedor_formulario.style.display = "none";
         } else {
           alert("Error al agregar el juego.");
         }
