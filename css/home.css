@@ -65,8 +65,6 @@ main::after {
   align-items: center; /* Centra los elementos verticalmente */
   font-size: 2.5rem;
 }
-
-/* FILA 1 DEL FORMULARIO (TÍTULO) */
 .fila1,
 .fila2,
 .fila3,
@@ -85,6 +83,8 @@ main::after {
 .fila6 {
   width: 100%;
 }
+
+/* FILA 1 DEL FORMULARIO (TÍTULO) */
 
 /* FILA 2 DEL FORMULARIO */
 .buscador {
@@ -147,8 +147,6 @@ main::after {
   gap: 1rem;
   flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
 }
-
-/* INPUTS */
 .barra_buscador,
 .generos,
 .plataformas,
@@ -159,6 +157,8 @@ main::after {
   border-radius: 0.5rem;
   padding-left: 1rem;
   background-color: rgba(253, 254, 254, 0.8);
+  color: black;
+  font-weight: 600;
 }
 
 /* BOTONES */
@@ -433,8 +433,10 @@ li p {
     padding: 0.6em 1.8rem;
     font-size: 2.2rem;
   }
-
-  /* FILA 1 DEL FORMULARIO (TÍTULO) */
+  .formulario input,
+  .formulario select {
+    height: 1.8em;
+  }
   .fila1,
   .fila2,
   .fila3,
@@ -443,6 +445,12 @@ li p {
   .fila6 {
     gap: 1.5rem;
   }
+
+  /* FILA 1 DEL FORMULARIO (TÍTULO) */
+  .formulario h2 {
+    font-size: 1.3em;
+  }
+
   /* FILA 2 DEL FORMULARIO */
   .multi {
     flex: 2;

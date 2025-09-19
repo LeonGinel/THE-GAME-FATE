@@ -69,6 +69,9 @@
 }
 
 /* ------------------------------- BUSCADOR ------------------------------- */
+.head1_buscador-y-nav {
+  position: relative;
+}
 .head_contenedor-buscador {
   display: flex;
   align-items: center;
@@ -79,7 +82,6 @@
   overflow: hidden; /* Para que no se salga nada */
 }
 .head_buscador-formulario {
-  position: relative;
   display: grid;
 }
 .head_barra-buscador {
@@ -87,6 +89,7 @@
   border: none;
   font-size: 1.8rem;
   padding: 0.8rem 1rem;
+  color: black;
   outline: none; /* quita el borde negro que sale al escribir */
 }
 .resultados_busqueda_tiempo_real {
@@ -94,7 +97,7 @@
   top: 100%; /* Lo posicionamos justo debajo del campo de búsqueda */
   left: 0;
   right: 0;
-  display: grid;
+  display: none;
   justify-items: center;
   align-items: center;
   gap: 1rem;
@@ -256,45 +259,46 @@
   }
   .head_menu {
     /* Lista del menú (oculta por defecto) */
+    position: absolute;
     display: none;
     background-color: rgba(34, 34, 34, 1);
-    max-width: 40%;
+    width: 100%;
     list-style: none;
     flex-direction: column;
-    position: absolute;
-    top: 3rem;
+    top: 2.7rem;
     right: 0;
-    text-align: left;
+    text-align: right;
     font-size: 2rem;
     gap: 0.5rem;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
   }
   .head_menu.open {
     /* Mostrar menú cuando tenga la clase .open */
     display: flex;
-    padding: 0.5em;
+    padding: 0;
   }
   .head_menu li a {
     color: white;
     text-decoration: none;
     display: block;
     cursor: pointer;
-    border-radius: 0.5em;
     padding: 0.3em;
+    padding-right: 0.5em;
   }
   .head_menu li a:hover {
     /* Efecto al pasar el mouse */
     color: #00f6d1;
     background-color: rgba(0, 0, 0, 0.8);
+    font-weight: 600;
   }
 
   /* -------- HEAD 2 -------- */
   .head2 {
     height: 2.6rem;
     padding: 0.2rem;
-    padding-left: 1.5rem;
+    padding-left: 0.5rem;
   }
   /* - BIENVENIDO/REGISTRO/LOGIN - */
   .head2_bienvenido {

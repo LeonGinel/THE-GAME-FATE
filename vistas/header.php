@@ -26,9 +26,8 @@
                         <img class="head_icono-lupa" src="../multimedia/iconos/lupa.png" alt="Buscar">
                     </button>
                 </div>
-                
-                <div class="resultados_busqueda_tiempo_real"></div>
             </form>
+            <div class="resultados_busqueda_tiempo_real"></div>
 
             <nav class="head_nav">
                 <button type="button" class="head_btn-menu">
