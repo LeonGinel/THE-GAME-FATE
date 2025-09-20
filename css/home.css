@@ -413,29 +413,24 @@ li p {
 /* ------------------------------------------------------------------------ */
 
 @media (max-width: 768px) {
-}
-
-@media (max-width: 480px) {
   main {
-    padding-top: 11rem;
-    padding-bottom: 2rem;
+    padding-top: 13rem;
+    padding-bottom: 4rem;
+  }
+  .contenedor_principal {
+    width: 80%;
   }
 
-  /* ---- FORMULARIO ---- */
+  /* ----- FORMULARIO ----- */
   .fondo1-form {
-    padding: 0.5em;
     border-radius: 1.5rem;
   }
   .formulario {
     grid-template-rows: repeat(6, auto);
-    gap: 1.5rem;
+    gap: 1.2rem;
     border-radius: 1.5rem;
     padding: 0.6em 1.8rem;
     font-size: 2.2rem;
-  }
-  .formulario input,
-  .formulario select {
-    height: 1.8em;
   }
   .fila1,
   .fila2,
@@ -444,6 +439,95 @@ li p {
   .fila5,
   .fila6 {
     gap: 1.5rem;
+  }
+
+  /* FILA 2 DEL FORMULARIO */
+  .buscador {
+    flex: 4;
+    width: 100%;
+  }
+  .multi {
+    flex: 1;
+  }
+
+  /* FILA 3 DEL FORMULARIO */
+  .genero-plataforma {
+    gap: 1.5rem;
+  }
+  .goty {
+    flex: 1.5;
+  }
+
+  /* FILA 4 DEL FORMULARIO */
+  .duracion-lanzamiento {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  .duracion,
+  .lanzamiento {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    gap: 0.5rem;
+  }
+  .selectores_duracion,
+  .selectores_lanzamiento {
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .obra_maestra {
+    flex: 1.5;
+  }
+
+  /* FILA 5 DEL FORMULARIO */
+  .estrellas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
+  }
+  .barra_buscador,
+  .generos,
+  .plataformas,
+  .minimo,
+  .maximo {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    background-color: rgba(253, 254, 254, 0.8);
+    color: black;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 11rem;
+    padding-bottom: 2rem;
+  }
+  .contenedor_principal {
+    width: 100%;
+  }
+
+  /* ---- FORMULARIO ---- */
+  .fondo1-form {
+    padding: 0.5em;
+    border-radius: 1.5rem;
+  }
+  .formulario {
+    gap: 1.5rem;
+  }
+  .formulario input,
+  .formulario select {
+    height: 1.8em;
   }
 
   /* FILA 1 DEL FORMULARIO (TÍTULO) */
@@ -467,13 +551,6 @@ li p {
   /* FILA 4 DEL FORMULARIO */
   .duracion-lanzamiento {
     gap: 1.5rem;
-  }
-  .duracion,
-  .lanzamiento {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    gap: 0.5rem;
   }
   .selectores_duracion,
   .selectores_lanzamiento {
