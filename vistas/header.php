@@ -14,7 +14,9 @@
 
 <header class="head">
     <div class="head1">
-        <h1>THE GAME FATE</h1>
+        <div class="head1_h1">
+            <h1>THE GAME FATE</h1>
+        </div>
         
         <a class="head_btn-logo" href="home.php"><img class="head_logo-principal" src="../multimedia/logos/logo_principal.webp" alt="Logo"></a>
 
