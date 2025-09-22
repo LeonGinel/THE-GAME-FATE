@@ -123,8 +123,6 @@ main::after {
 .lanzamiento {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
 .selectores_duracion,
@@ -175,7 +173,7 @@ main::after {
   display: block; /* mejor que inline-block para labels */
   width: 100%;
   height: 3rem; /* altura uniforme */
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   background-position: center;
   background-size: cover;
   cursor: pointer;
@@ -193,41 +191,16 @@ main::after {
 .btn_buscar {
   display: inline-block;
   padding: 0.3rem 2rem;
-  background-color: #c8c8c8;
+  background-color: rgb(0, 246, 209, 0.6);
   color: black;
   text-decoration: none;
   border-radius: 0.6rem;
   border: none;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 700;
   cursor: pointer;
-}
-
-/* EFECTOS */
-.estrella,
-input + label {
-  height: 2.3rem;
-  cursor: pointer;
-  transition: transform 0.4s ease, filter 0.4s ease; /* Efecto suave */
-}
-input + label {
-  filter: brightness(0.9);
-}
-input[type="radio"]:hover ~ label img,
-input[type="radio"]:hover + label img,
-input[type="checkbox"]:hover + label {
-  transform: scale(1.2); /* Aumenta el tamaño */
-  filter: brightness(1.2); /* Hace la imagen más brillante */
-}
-input[type="radio"],
-input[type="checkbox"] {
-  display: none;
-}
-input[type="radio"]:checked ~ label img,
-input[type="radio"]:checked + label img,
-input[type="checkbox"]:checked + label {
-  transform: scale(1.2);
-  filter: brightness(1.4);
+  box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease;
 }
 
 /* -------------------------------- RESULTADOS BUSQUEDA ---------------------------- */
@@ -250,7 +223,7 @@ input[type="checkbox"]:checked + label {
   border-radius: 1.5rem;
   width: 100%;
   padding: 2.5rem;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
 }
 .resultado {
   display: flex;
@@ -291,12 +264,12 @@ input[type="checkbox"]:checked + label {
   align-items: center;
   justify-content: center;
   gap: 0.8em;
-  padding: 0.8rem;
+  margin-right: 1rem;
   width: 100%;
 }
 .etiqueta_goty,
 .etiqueta_obra_maestra {
-  width: 50%;
+  width: 45%;
   object-fit: cover;
   border-radius: 2rem;
 }
@@ -310,18 +283,21 @@ input[type="checkbox"]:checked + label {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5em;
+  gap: 1em;
   padding-top: 1rem;
 }
 .btn-pagina {
   padding: 0.3rem 0.4rem;
-  background-color: #c8c8c8;
+  background-color: rgb(0, 246, 209, 0.6);
   color: black;
   text-decoration: none;
   border-radius: 0.7rem;
   border: none;
   font-size: 1.5rem;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease;
 }
 
 /* -------------------------------- CARRUSEL ---------------------------- */
@@ -390,7 +366,7 @@ li p {
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0);
   border: none;
-  padding: 9.1rem 0;
+  padding: 11rem 0;
   cursor: pointer;
   z-index: 10;
 }
@@ -404,8 +380,39 @@ li p {
   border-bottom-right-radius: 1.5rem;
   right: 0.1rem;
 }
+
+/* EFECTOS */
+.estrella,
+input + label {
+  height: 2.3rem;
+  cursor: pointer;
+  transition: transform 0.4s ease, filter 0.4s ease; /* Efecto suave */
+}
+input + label {
+  filter: brightness(0.9);
+}
+input[type="radio"]:hover ~ label img,
+input[type="radio"]:hover + label img,
+input[type="checkbox"]:hover + label {
+  transform: scale(1.2); /* Aumenta el tamaño */
+  filter: brightness(1.2); /* Hace la imagen más brillante */
+}
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+input[type="radio"]:checked ~ label img,
+input[type="radio"]:checked + label img,
+input[type="checkbox"]:checked + label {
+  transform: scale(1.2);
+  filter: brightness(1.4);
+}
+.btn_buscar:hover,
+.btn-pagina:hover {
+  transform: scale(1.05);
+}
 .carrusel_btn:hover {
-  background-color: rgba(200, 200, 200, 0.7);
+  background-color: rgb(0, 246, 209, 0.6);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -429,7 +436,7 @@ li p {
     grid-template-rows: repeat(6, auto);
     gap: 1.2rem;
     border-radius: 1.5rem;
-    padding: 0.6em 1.8rem;
+    padding: 0.6em 1.4rem;
     font-size: 2.2rem;
   }
   .fila1,
@@ -442,12 +449,8 @@ li p {
   }
 
   /* FILA 2 DEL FORMULARIO */
-  .buscador {
-    flex: 4;
-    width: 100%;
-  }
   .multi {
-    flex: 1;
+    flex: 1.5;
   }
 
   /* FILA 3 DEL FORMULARIO */
@@ -460,51 +463,117 @@ li p {
 
   /* FILA 4 DEL FORMULARIO */
   .duracion-lanzamiento {
-    flex: 4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
+    gap: 1.5rem;
   }
   .duracion,
   .lanzamiento {
-    width: 100%;
     display: grid;
-    align-items: center;
     justify-items: left;
     gap: 0.5rem;
   }
   .selectores_duracion,
   .selectores_lanzamiento {
-    width: 100%;
-    gap: 0.5rem;
+    gap: 0.8rem;
   }
   .obra_maestra {
     flex: 1.5;
   }
 
-  /* FILA 5 DEL FORMULARIO */
-  .estrellas {
+  /* ----- RESULTADOS BUSQUEDA ----- */
+  #resultados {
+    gap: 2.5rem;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    font-size: 1.6rem;
+  }
+  .resultado {
+    border: 0.1rem solid rgb(255, 255, 255);
+  }
+  .portada {
+    aspect-ratio: 4 / 2.3;
+  }
+  .informacion {
+    gap: 1rem;
+  }
+  .etiquetas {
+    flex: 1.2;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 0.5em;
+    padding: 0;
+    margin: 0;
+  }
+  .etiqueta_goty,
+  .etiqueta_obra_maestra {
+    width: 60%;
+    border-radius: 1rem;
+  }
+  .etiqueta_estrellas {
+    bottom: 0.2rem;
+    left: 0.2rem;
+  }
+  .btn-pagina {
+    width: 2rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.5rem;
+  }
+
+  /* ----- CARRUSEL ----- */
+  .fondo1-carrusel {
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+  .carrusel {
+    gap: 0.7rem;
+  }
+  .carrusel_btn {
+    padding: 7.7rem 0;
+  }
+
+  /* ----- BOTONES ----- */
+  .multi,
+  .goty,
+  .obra_maestra {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    gap: 1rem;
-    flex-direction: row-reverse; /* Esto es para poder aplicar el efecto mas tarde */
   }
-  .barra_buscador,
-  .generos,
-  .plataformas,
-  .minimo,
-  .maximo {
-    width: 100%;
-    height: 3rem;
-    border-radius: 0.5rem;
-    padding-left: 1rem;
-    background-color: rgba(253, 254, 254, 0.8);
-    color: black;
-    font-weight: 600;
+  .btn_multi,
+  .btn_goty,
+  .btn_obra_maestra {
+    width: 90%;
+    height: 2.6rem;
+  }
+  .btn_buscar {
+    padding: 0.2rem 1.8rem;
+  }
+
+  /* ----- EFECTOS ----- */
+  .estrella,
+  input + label {
+    height: 2.2rem;
+  }
+  input + label {
+    filter: brightness(0.8);
+  }
+  input[type="radio"]:hover ~ label img,
+  input[type="radio"]:hover + label img {
+    transform: scale(1.2);
+    filter: brightness(1.8);
+  }
+  input[type="checkbox"]:hover + label {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  input[type="radio"]:checked ~ label img,
+  input[type="radio"]:checked + label img {
+    transform: scale(1.3);
+    filter: brightness(1.8);
+  }
+  input[type="checkbox"]:checked + label {
+    transform: scale(1.15);
+    filter: brightness(1.2);
   }
 }
 
@@ -520,7 +589,6 @@ li p {
   /* ---- FORMULARIO ---- */
   .fondo1-form {
     padding: 0.5em;
-    border-radius: 1.5rem;
   }
   .formulario {
     gap: 1.5rem;
@@ -540,18 +608,7 @@ li p {
     flex: 2;
   }
 
-  /* FILA 3 DEL FORMULARIO */
-  .genero-plataforma {
-    gap: 1.5rem;
-  }
-  .goty {
-    flex: 1.5;
-  }
-
   /* FILA 4 DEL FORMULARIO */
-  .duracion-lanzamiento {
-    gap: 1.5rem;
-  }
   .selectores_duracion,
   .selectores_lanzamiento {
     width: 100%;
@@ -583,33 +640,7 @@ li p {
     border: none;
   }
 
-  /* BOTONES */
-  .btn_multi,
-  .btn_goty,
-  .btn_obra_maestra {
-    height: 2.6rem; /* altura uniforme */
-    border-radius: 1.3rem;
-  }
-  .btn_buscar {
-    padding: 0.2rem 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  /* EFECTOS */
-
-  input[type="radio"]:hover ~ label img,
-  input[type="radio"]:hover + label img,
-  input[type="checkbox"]:hover + label {
-    transform: scale(1.1);
-  }
-  input[type="radio"]:checked ~ label img,
-  input[type="radio"]:checked + label img,
-  input[type="checkbox"]:checked + label {
-    transform: scale(1.2);
-  }
-
-  /* -------------------------------- RESULTADOS BUSQUEDA ---------------------------- */
+  /* ----- RESULTADOS BUSQUEDA ----- */
   .fondo1-resultados {
     display: none;
     padding: 0.5rem;
@@ -665,7 +696,7 @@ li p {
     border-radius: 0.5rem;
   }
 
-  /* -------------------------------- CARRUSEL ---------------------------- */
+  /* ----- CARRUSEL ----- */
   .fondo1-carrusel {
     padding: 0.5rem;
     border-radius: 1.5rem;
@@ -724,5 +755,31 @@ li p {
   }
   .carrusel_btn:hover {
     background-color: rgba(200, 200, 200, 0.7);
+  }
+
+  /* ----- BOTONES ------ */
+  .btn_multi,
+  .btn_goty,
+  .btn_obra_maestra {
+    height: 2.6rem; /* altura uniforme */
+    border-radius: 1.3rem;
+  }
+  .btn_buscar {
+    padding: 0.2rem 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  /* ----- EFECTOS ------ */
+
+  input[type="radio"]:hover ~ label img,
+  input[type="radio"]:hover + label img,
+  input[type="checkbox"]:hover + label {
+    transform: scale(1.1);
+  }
+  input[type="radio"]:checked ~ label img,
+  input[type="radio"]:checked + label img,
+  input[type="checkbox"]:checked + label {
+    transform: scale(1.2);
   }
 }

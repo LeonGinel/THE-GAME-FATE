@@ -79,7 +79,6 @@
                                     </div>
                                 </div>
                                 
-
                                 <div class="obra_maestra">
                                     <input type="checkbox" name="obra_maestra" id="obra_maestra">
                                     <label for="obra_maestra" class="btn_obra_maestra"></label>
