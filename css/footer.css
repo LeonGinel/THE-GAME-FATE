@@ -21,21 +21,27 @@
 }
 .redes_sociales {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
 }
 
 /* ------------------------------------------------------------------------ */
 /* ---------------------------- RESPONSIVE !!! ---------------------------- */
 /* ------------------------------------------------------------------------ */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .footer {
     gap: 1rem;
+    font-size: 1.3rem;
+  }
+  .footer a {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
     font-size: 1.2rem;
   }
   .footer a {
     font-size: 1.8rem;
-  }
-  .redes_sociales {
-    gap: 1.6rem;
   }
 }
